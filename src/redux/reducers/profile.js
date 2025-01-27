@@ -10,9 +10,9 @@ const initialObject= {
   bio: "",
   area: "",
   image: "",
-  createdAt: '',
-  updatedAt: '',
-  __v: 0,
+    createdAt: "",
+  updatedAt: "",
+ __v: 0,
 };
 const initialState ={
     data:initialObject,
