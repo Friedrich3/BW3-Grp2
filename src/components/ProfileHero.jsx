@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import { Button, Card, Col, Modal, Row } from "react-bootstrap";
 import { Camera, PencilSquare, Trash } from "react-bootstrap-icons";
-// import { useDispatch } from "react-redux";
-import { getDataAction } from "../redux/action";
-import { useDispatch, useSelector } from "react-redux";
 
 
-const ProfileHero = function () {
+const ProfileHero = function (props) {
 
-const dispatch = useDispatch()
-const profilo = useSelector((state)=>{ return state.profile.data})
+
 
 
     
@@ -22,17 +19,13 @@ const profilo = useSelector((state)=>{ return state.profile.data})
     
 
 
-    useEffect(()=>{
-            dispatch(getDataAction()) 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
 
 
 
 
   return (
     <>
-    {profilo  &&
+    {props  &&
    
       <Card className="">
         <Card.Img variant="top" src="https://placecats.com/500/120" />
@@ -101,13 +94,13 @@ const profilo = useSelector((state)=>{ return state.profile.data})
           </Row>
           <div>
             <Card.Title className=" fs-3">
-              {`${profilo.name} ${profilo.surname}` }
+              {`${props.profilo.name} ${props.profilo.surname}` }
               <small className="btn btn-outline-primary custom-border py-0 rounded-pill">
                 Aggiungi Badge
               </small>
             </Card.Title>
-            <Card.Text>{profilo.title}</Card.Text>
-            <small className="text-secondary">{profilo.area}</small>
+            <Card.Text>{props.profilo.title}</Card.Text>
+            <small className="text-secondary">{props.profilo.area}</small>
           </div>
           <div className="mt-3">
             <Button variant="primary" className=" rounded-pill me-2 fw-medium">
