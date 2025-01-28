@@ -3,8 +3,8 @@ import { PencilSquare } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 
 const ProfileInfo = function () {
-  const info = useSelector((state) => {
-    return state.profile.data;
+  const info = useSelector((store) => {
+    return store.profile.data;
   });
 
   return (

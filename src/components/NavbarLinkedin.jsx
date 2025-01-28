@@ -131,7 +131,7 @@ function NavbarLinkedin() {
                 </Nav.Item>
 
                 <Dropdown className="d-flex flex-column align-items-center mx-0 my-2 ps-4">
-                  <Icon.PersonCircle className="fs-5" />
+                  <Link to={'/profile'}><Icon.PersonCircle className="fs-5" /></Link> 
                   <div className="m-0">
                     <Dropdown.Toggle
                       variant="transparent"

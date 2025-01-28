@@ -8,6 +8,7 @@ import {
   Trash,
 } from "react-bootstrap-icons";
 import EditProfileModal from "./EditProfileModal";
+import { useSelector } from "react-redux";
 
 const ProfileHero = function (props) {
   // HANDLE MODALE ICONA PROFILO
@@ -17,6 +18,11 @@ const ProfileHero = function (props) {
 
   //Modale Modifica profilo
   const[editProfile,setEditProfile] = useState(false)
+
+  //Redux STore delle esperienze
+  const lastExp = useSelector((store) => {
+    return store.experiences.data[store.experiences.data.length -1];
+  });
 
   return (
     <>
@@ -116,8 +122,8 @@ const ProfileHero = function (props) {
               <Col xs={12} md={5} className="border border-1">
                   <Row>
                     <Col className="d-flex align-items-center" xs={12}>
-                     <img src="https://placecats.com/50/50" alt="" className="rounded-circle"/> 
-                    <a href="#company" className=" text-decoration-none custom-hover"><span className=" h6 ms-2 text-black">Company Name</span></a>
+                     <img src={lastExp.image} alt="" className="rounded-circle" style={{'width':'60px'}}/> 
+                    <a href="#company" className=" text-decoration-none custom-hover"><span className=" h6 ms-2 text-black">{lastExp.company}</span></a>
                     
                     </Col>
                     <Col className="d-flex" xs={12}>
