@@ -4,17 +4,20 @@ import { PencilSquare, Plus } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import ExperienceListItem from "./ExperienceListItem";
 import ModalAddExperience from "./ModalAddExperience";
+import { useNavigate } from "react-router-dom";
 
 const ProfileExperience = function () {
   const experiences = useSelector((store) => {
     return store.experiences.data;
   });
+  
 
 //CONTROLL SULLA MODALE DI AGGIUNTA DI UN EXPERIENCE
   const [addExperience, setAddExperience] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
-  }, [experiences]);
+  }, []);
 
 
   const calcoloDate = function(dataInizio, dataFine){
@@ -51,7 +54,7 @@ const ProfileExperience = function () {
                   <Button
                     variant="outline-secondary"
                     className="border-0 rounded-circle py-2 align-text-top opacity-75"
-                    onClick={() => {}}>
+                    onClick={() => {navigate('/experience/modify')}}>
                     {/* TODO: AGGIUNGERE MODALE CON PUT PER CAMBIARNE IL CONTENUTO */}
                     <PencilSquare color="black" size={20}></PencilSquare>
                   </Button>
@@ -86,7 +89,7 @@ const ProfileExperience = function () {
                             <small>{calcoloDate(experiences[experiences.length -1].startDate, experiences[experiences.length -1].endDate)}</small>
                           </div>
                           <div className="mt-3">
-                            <h6>{experiences[0].role}</h6>
+                            <h6>{experiences[experiences.length -1].role}</h6>
                             <small className=" text-secondary">
                               {`${experiences[experiences.length -1].startDate.slice(0,7)} - Presente - ${calcoloDate(experiences[experiences.length -1].startDate, experiences[experiences.length -1].endDate)}`}
                             </small>
@@ -103,9 +106,9 @@ const ProfileExperience = function () {
                     {
                       experiences.length > 1 &&
                       
-                            experiences.slice(0,-1).reverse().map((item)=>{
+                            experiences.toReversed().slice(1).map((item)=>{
                               return(
-                                <ExperienceListItem item={item} key={item._id} calcoloDate={calcoloDate}/>
+                                <ExperienceListItem item={item} key={item._id} calcoloDate={calcoloDate} modificable={false}/>
                               )
                             })
                       

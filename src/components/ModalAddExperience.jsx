@@ -27,7 +27,7 @@ const ModalAddExperience = function (props) {
   const handleSubmit = function (event){
         event.preventDefault();
         const formCompleto = new FormData(event.target);
-        console.log(Object.fromEntries(formCompleto))
+        //console.log(Object.fromEntries(formCompleto))
         formPost(formCompleto);
   }
 
