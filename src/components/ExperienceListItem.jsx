@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Col, ListGroup, Row } from "react-bootstrap";
 
-const ExperienceListItem = function ({ item }) {
+const ExperienceListItem = function ({ item , calcoloDate }) {
+
   return (
     <>
       <ListGroup.Item className="border-0 border-bottom container-fluid">
@@ -19,7 +20,7 @@ const ExperienceListItem = function ({ item }) {
               <h6>{item.role}</h6>
               <span>{item.company}</span>
               <small className="text-secondary">
-                Da quando - A quando - Per quanto
+                {`${item.startDate.slice(0,7)} - ${item.endDate.slice(0,7)} - ${calcoloDate(item.startDate,item.endDate)}`}
               </small>
               <small className="text-secondary">{item.area}</small>
               <p className="mt-2">
