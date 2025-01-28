@@ -4,6 +4,8 @@ import { Button, Card, Col, Modal, Row } from "react-bootstrap";
 import {
   Camera,
   PencilSquare,
+  ShieldCheck,
+  ShieldFillCheck,
   Trash,
 } from "react-bootstrap-icons";
 import EditProfileModal from "./EditProfileModal";
@@ -96,16 +98,36 @@ const ProfileHero = function (props) {
                   )}
 
             </Row>
+            <Row>
+              <Col xs={12} md={7}>
             <div>
-              <Card.Title className=" fs-3">
+              <Card.Title className=" fs-3 d-flex align-items-center">
                 {`${props.profilo.name} ${props.profilo.surname}`}
-                <small className="btn btn-outline-primary custom-border py-0 rounded-pill ms-1 fw-medium">
+                <ShieldCheck className="ms-2 fs-5"/>
+                {/* <small className="btn btn-outline-primary custom-border py-0 rounded-pill ms-1 fw-medium">
                   Aggiungi Badge
-                </small>
+                </small> */}
               </Card.Title>
               <Card.Text>{props.profilo.title}</Card.Text>
               <small className="text-secondary">{props.profilo.area}</small>
             </div>
+              
+              </Col>
+
+              <Col xs={12} md={5} className="border border-1">
+                  <Row>
+                    <Col className="d-flex align-items-center" xs={12}>
+                     <img src="https://placecats.com/50/50" alt="" className="rounded-circle"/> 
+                    <a href="#company" className=" text-decoration-none custom-hover"><span className=" h6 ms-2 text-black">Company Name</span></a>
+                    
+                    </Col>
+                    <Col className="d-flex" xs={12}>
+                    
+                    </Col>
+
+                  </Row>
+              </Col>
+            </Row>
             <div className="mt-3">
               <Button
                 variant="primary"
