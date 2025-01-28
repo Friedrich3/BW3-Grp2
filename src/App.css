@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  overflow-x: hidden;
   background-color: #f4f2ee;
 }
 
@@ -17,9 +17,11 @@ body {
 }
 
 /* FOOTERLINKEDIN */
+
 .custom-hover:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
   color: blue;
+
 }
 
 /* FOOTERMINI */
@@ -51,3 +53,10 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+
+/*SideBarProfile.jsx  Larghezza Foto Classe Personale */
+.w-14 {
+  width: 14% !important;
+}
+
