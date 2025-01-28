@@ -27,11 +27,13 @@ const EditProfileModal = function (props) {
         headers: { Authorization: token, "Content-Type": "application/json" },
         body: JSON.stringify(formProfile),
       });
+
       if (response.ok) {
         handleClose();
         dispatch(getDataAction());
       } else {
         throw new Error("Errore PUT");
+
       }
     } catch (error) {
       console.log(error);
