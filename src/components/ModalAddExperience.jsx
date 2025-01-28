@@ -149,9 +149,16 @@ const ModalAddExperience = function (props) {
                   accept="image/*"
                   className="form-control mb-3"
                 /> */}
+              
+
                 <small className="mb-1 text-body-secondary display-6 fs-6">
                   *indica che è obbligatorio
                 </small>
+                <br />
+                <small className="mb-1 text-body-secondary display-6 fs-6">
+                  Potrai cambiare l&apos;immagine nella sezione modifica 
+                </small>
+                
                 <div className="d-flex justify-content-between">
                   <Button
                     type="reset"
