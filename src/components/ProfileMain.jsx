@@ -1,19 +1,13 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import ProfileHero from "./ProfileHero"
-import { getDataAction } from "../redux/action"
-import { useEffect } from "react"
+
 
 const ProfileMain = function (){
 
-    const dispatch = useDispatch()
     const profilo = useSelector((state)=>{ return state.profile.data})
     //FETCH INFO PROFILO CON BEARER CASUALE DEI 6
     
-    //EVENTUALMENTE DA SPOSTARE IN APP.Jsx PER OTTENERE LE INFO DEL PROFILO allo start della pagina
-    useEffect(()=>{
-        dispatch(getDataAction()) 
-// eslint-disable-next-line react-hooks/exhaustive-deps
-},[])
+
 
     return(
         <>
