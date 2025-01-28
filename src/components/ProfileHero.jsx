@@ -5,7 +5,6 @@ import {
   Camera,
   PencilSquare,
   ShieldCheck,
-  ShieldFillCheck,
   Trash,
 } from "react-bootstrap-icons";
 import EditProfileModal from "./EditProfileModal";
