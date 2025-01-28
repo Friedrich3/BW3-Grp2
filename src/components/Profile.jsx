@@ -4,11 +4,15 @@ import ProfileMain from "./ProfileMain"
 import ProfileInfo from "./ProfileInfo"
 import ProfileExperience from "./ProfileExperience"
 import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getExpAction } from "../redux/action"
 
 const Profile = function(){
+    const profilo = useSelector((store)=> {return store.profile.data})
+    const dispatch = useDispatch()
 
     useEffect(()=>{
-        
+        dispatch(getExpAction(profilo._id))
     },[])
 
     return(

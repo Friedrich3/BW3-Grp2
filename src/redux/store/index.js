@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import profileReducer from "../reducers/profile"
-import experiencesReducer from "../reducers/profileUX"
+import experiencesReducer from "../reducers/experiences"
 
 
 

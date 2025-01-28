@@ -4,7 +4,7 @@ import ProfileHero from "./ProfileHero"
 
 const ProfileMain = function (){
 
-    const profilo = useSelector((state)=>{ return state.profile.data})
+    const profilo = useSelector((store)=>{ return store.profile.data})
     //FETCH INFO PROFILO CON BEARER CASUALE DEI 6
     
 

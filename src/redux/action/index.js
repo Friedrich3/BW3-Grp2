@@ -39,9 +39,30 @@ export const getDataAction = ()=>{
 }
 
 
-export const getExpAction = () => {
+export const getExpAction = (userId) => {
     return async(dispatch) =>{
-            const endpoint =
+            const endpointGET = `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`
+
+        try {
+            const response = await fetch(endpointGET,{
+                headers:{
+                    "Authorization":token
+                }})
+                if(response.ok){
+                    const data = await response.json()
+                    dispatch({
+                        type: GET_EXPS_SUCCESS,
+                        payload: data
+                    })
+                }else{
+                    throw new Error("Errore Fetch Experiences")
+                }
+
+            
+        } catch (error) {
+            console.log(error)
+
+        }
 
     }
 
