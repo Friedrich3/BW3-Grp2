@@ -103,7 +103,7 @@ const ProfileHero = function (props) {
             <div>
               <Card.Title className=" fs-3 d-flex align-items-center">
                 {`${props.profilo.name} ${props.profilo.surname}`}
-                <ShieldFillCheck className="ms-2"/>
+                <ShieldCheck className="ms-2 fs-5"/>
                 {/* <small className="btn btn-outline-primary custom-border py-0 rounded-pill ms-1 fw-medium">
                   Aggiungi Badge
                 </small> */}
@@ -114,7 +114,7 @@ const ProfileHero = function (props) {
               
               </Col>
               <Col xs={12} md={5} className="border border-1">
-                    
+
               </Col>
             </Row>
             <div className="mt-3">
