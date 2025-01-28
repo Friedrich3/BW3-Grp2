@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { getDataAction } from "../redux/action";
 
 const EditProfileModal = function (props) {
-    const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const initialProfile = props.profilo;
   const [formProfile, setFormProfile] = useState(initialProfile);
 
@@ -27,11 +27,13 @@ const EditProfileModal = function (props) {
         headers: { Authorization: token, "Content-Type": "application/json" },
         body: JSON.stringify(formProfile),
       });
-      if(response.ok){
-        handleClose()
-        dispatch(getDataAction())
-      }else{
-        throw new Error('Errore PUT')
+
+      if (response.ok) {
+        handleClose();
+        dispatch(getDataAction());
+      } else {
+        throw new Error("Errore PUT");
+
       }
     } catch (error) {
       console.log(error);
