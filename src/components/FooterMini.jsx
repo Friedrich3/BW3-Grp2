@@ -14,15 +14,15 @@ const FooterMini = function () {
             <Col xs={7} md={8} lg={10}></Col>
             <Col xs={5} md={2} lg={2}>
               <Nav className="justify-content-center ">
-                <Nav.Link href="#info" className="footerMini p-1 ">Informazioni</Nav.Link>
-                <Nav.Link href="#accessibilita" className="footerMini p-1 ">Accessibilità</Nav.Link>
-                <Nav.Link href="#assistenza" className="footerMini p-1 ">Centro assistenza</Nav.Link>
-                <Nav.Link href="#privacy" className="footerMini p-1 ">Privacy e condizioni</Nav.Link>
-                <Nav.Link href="#annunci" className="footerMini p-1 ">Opzioni per gli annunci pubblicitari</Nav.Link>
-                <Nav.Link href="#pubblicita" className="footerMini p-1">Pubblicità</Nav.Link>
-                <Nav.Link href="#aziende" className="footerMini p-1 ">Servizi alle aziende</Nav.Link>
-                <Nav.Link href="#app" className="footerMini p-1 ">Scarica l’app LinkedIn.</Nav.Link>
-                <Nav.Link href="#altro" className="footerMini p-1 " onClick={() => setShow(true)}>Altro.</Nav.Link>
+                <Nav.Link className="footerMini p-1 ">Informazioni</Nav.Link>
+                <Nav.Link className="footerMini p-1 ">Accessibilità</Nav.Link>
+                <Nav.Link className="footerMini p-1 ">Centro assistenza</Nav.Link>
+                <Nav.Link className="footerMini p-1 ">Privacy e condizioni</Nav.Link>
+                <Nav.Link className="footerMini p-1 ">Opzioni per gli annunci pubblicitari</Nav.Link>
+                <Nav.Link className="footerMini p-1">Pubblicità</Nav.Link>
+                <Nav.Link className="footerMini p-1 ">Servizi alle aziende</Nav.Link>
+                <Nav.Link className="footerMini p-1 ">Scarica l’app LinkedIn.</Nav.Link>
+                <Nav.Link className="footerMini p-1 " onClick={() => setShow(true)}>Altro.</Nav.Link>
                 <Modal
                   show={show}
                   onHide={() => setShow(false)}
