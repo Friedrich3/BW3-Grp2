@@ -3,8 +3,13 @@ import ProfileSideBar from "./ProfileSideBar"
 import ProfileMain from "./ProfileMain"
 import ProfileInfo from "./ProfileInfo"
 import ProfileExperience from "./ProfileExperience"
+import { useEffect } from "react"
 
 const Profile = function(){
+
+    useEffect(()=>{
+        
+    },[])
 
     return(
         <Container>
