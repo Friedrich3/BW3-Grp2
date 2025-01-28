@@ -120,17 +120,17 @@ const ProfileHero = function (props) {
               </Col>
 
               <Col xs={12} md={5} className="border border-1">
-                  <Row>
-                    <Col className="d-flex align-items-center" xs={12}>
-                     <img src={lastExp.image} alt="" className="rounded-circle" style={{'width':'60px'}}/> 
-                    <a href="#company" className=" text-decoration-none custom-hover"><span className=" h6 ms-2 text-black">{lastExp.company}</span></a>
-                    
-                    </Col>
-                    <Col className="d-flex" xs={12}>
-                    
-                    </Col>
+              {lastExp &&(<Row>
+                <Col className="d-flex align-items-center" xs={12}>
+                  <img src={lastExp.image} alt="" className="rounded-circle" style={{'width':'60px'}}/> 
+                <a href="#company" className=" text-decoration-none custom-hover"><span className=" h6 ms-2 text-black">{lastExp.company}</span></a>
+                
+                </Col>
+                <Col className="d-flex" xs={12}>
+                
+                </Col>
 
-                  </Row>
+              </Row>)}
               </Col>
             </Row>
             <div className="mt-3">
