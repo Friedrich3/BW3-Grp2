@@ -8,19 +8,20 @@ body {
 }
 
 /* PROFILEHERO.tsx */
-.custom-border{
+.custom-border {
   border-style: dashed !important;
 }
-.custom-position{
+.custom-position {
   position: absolute;
   bottom: -30px;
-
 }
 
 /* FOOTERLINKEDIN */
-.custom-hover:hover{
+.custom-hover:hover {
   text-decoration: underline;
+  color: blue;
 }
+
 /* FOOTERMINI */
 #example-custom-modal-styling-title {
   position: absolute;
@@ -40,7 +41,7 @@ body {
   text-decoration: underline;
   color: blue;
 
-  background-color: #F4F2EE;
+  background-color: #f4f2ee;
 }
 
 /*PofileCardsSideBar.jsx */
