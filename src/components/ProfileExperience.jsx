@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
-import { PencilSquare } from "react-bootstrap-icons";
+import { PencilSquare, Plus } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import ExperienceListItem from "./ExperienceListItem";
 
@@ -24,13 +24,22 @@ const ProfileExperience = function () {
               <Card.Body>
                 <Card.Title className="d-flex justify-content-between align-items-center">
                   <span>Esperienze</span>
+                  <div>
+                  <Button
+                    variant="outline-light"
+                    className="border-0 rounded-circle align-text-top opacity-75"
+                    onClick={() => {}}>
+                    {/* TODO: AGGIUNGERE MODALE CON PUT PER CAMBIARNE IL CONTENUTO */}
+                  <Plus color="black" size={30}></Plus>
+                  </Button>
                   <Button
                     variant="outline-secondary"
-                    className="border-0 rounded-circle py-2 align-text-top"
+                    className="border-0 rounded-circle py-2 align-text-top opacity-75"
                     onClick={() => {}}>
                     {/* TODO: AGGIUNGERE MODALE CON PUT PER CAMBIARNE IL CONTENUTO */}
                     <PencilSquare color="black" size={20}></PencilSquare>
                   </Button>
+                      </div>
                 </Card.Title>
 
 
