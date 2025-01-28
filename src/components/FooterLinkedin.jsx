@@ -20,67 +20,67 @@ import {
                       Informazioni
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Informativa sulla community professionale
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Privacy e condizioni
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Sales Solutions
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Centro sicurezza
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Accessibilità
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Carriera
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Opzioni per gli annunci pubblicitari
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Mobile
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Talent Solutions
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Soluzioni di marketing
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Pubblicità
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Piccole imprese
                     </a>
                   </li>
-                  <li className="col fw-bold">
+                  <li className="col fw-bold custom-hover">
                     <a href="#" className="text-decoration-none text-secondary">
                       Centro sicurezza
                     </a>
