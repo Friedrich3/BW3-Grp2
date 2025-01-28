@@ -19,7 +19,7 @@ body {
 
 /* FOOTERLINKEDIN */
 .custom-hover:hover{
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 /* FOOTERMINI */
 #example-custom-modal-styling-title {

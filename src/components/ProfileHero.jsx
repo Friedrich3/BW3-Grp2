@@ -113,8 +113,19 @@ const ProfileHero = function (props) {
             </div>
               
               </Col>
-              <Col xs={12} md={5} className="border border-1">
 
+              <Col xs={12} md={5} className="border border-1">
+                  <Row>
+                    <Col className="d-flex align-items-center" xs={12}>
+                     <img src="https://placecats.com/50/50" alt="" className="rounded-circle"/> 
+                    <a href="#company" className=" text-decoration-none custom-hover"><span className=" h6 ms-2 text-black">Company Name</span></a>
+                    
+                    </Col>
+                    <Col className="d-flex" xs={12}>
+                    
+                    </Col>
+
+                  </Row>
               </Col>
             </Row>
             <div className="mt-3">

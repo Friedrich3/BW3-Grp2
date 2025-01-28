@@ -21,7 +21,7 @@ const ProfileExperience = function () {
                         />
                       </Col>
                       <Col xs={10} className="ms-2">
-                        <div>
+                        <div id="company">
                           <h6 className="m-0">Company</h6>
                           <small>Quanto tempo</small>
                         </div>
@@ -76,7 +76,7 @@ const ProfileExperience = function () {
                   </ListGroup.Item>
 
 
-                  
+
                 </ListGroup>
               </Card.Body>
             </Card>
