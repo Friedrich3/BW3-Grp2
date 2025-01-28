@@ -1,13 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { PencilSquare, Plus } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import ExperienceListItem from "./ExperienceListItem";
+import ModalAddExperience from "./ModalAddExperience";
 
 const ProfileExperience = function () {
   const experiences = useSelector((store) => {
     return store.experiences.data;
   });
+
+//CONTROLL SULLA MODALE DI AGGIUNTA DI UN EXPERIENCE
+  const [addExperience, setAddExperience] = useState(false)
 
 
   //const [expList, setExpList] = useState(experiences)
@@ -28,7 +32,7 @@ const ProfileExperience = function () {
                   <Button
                     variant="outline-light"
                     className="border-0 rounded-circle align-text-top opacity-75"
-                    onClick={() => {}}>
+                    onClick={() => {setAddExperience(true)}}>
                     {/* TODO: AGGIUNGERE MODALE CON PUT PER CAMBIARNE IL CONTENUTO */}
                   <Plus color="black" size={30}></Plus>
                   </Button>
@@ -41,6 +45,11 @@ const ProfileExperience = function () {
                   </Button>
                       </div>
                 </Card.Title>
+
+                {
+                addExperience &&(
+          <ModalAddExperience setAddExperience={setAddExperience} />)
+                }      
 
 
                 {experiences.length > 0 && (
@@ -82,7 +91,7 @@ const ProfileExperience = function () {
                     {
                       experiences.length > 1 &&
                       
-                            experiences.slice(0,-1).map((item)=>{
+                            experiences.slice(0,-1).reverse().map((item)=>{
                               return(
                                 <ExperienceListItem item={item} key={item._id} />
                               )
