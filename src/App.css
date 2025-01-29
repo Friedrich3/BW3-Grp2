@@ -11,6 +11,9 @@ body {
 .custom-border {
   border-style: dashed !important;
 }
+.custom-hover-card:hover{
+  background-color:#f4f2ee
+}
 .custom-position {
   position: absolute;
   bottom: -30px;
@@ -20,8 +23,9 @@ body {
 
 .custom-hover:hover {
   text-decoration: underline !important;
-  color: blue;
+  color: rgba(0, 0, 255, 0.468);
 }
+
 
 /* FOOTERMINI */
 #example-custom-modal-styling-title {
@@ -64,7 +68,6 @@ hr {
 }
 
 /*HomeNews*/
-
 .content {
   display: flex;
   align-items: center;
@@ -115,3 +118,10 @@ hr {
 .news-item:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
+
+/* RANDOM CSS */
+.pointer{
+  cursor: pointer;
+}
+

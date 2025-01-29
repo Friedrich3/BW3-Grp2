@@ -53,7 +53,7 @@ const EditProfileModal = function (props) {
                 Nome*
               </Form.Label>
               <Form.Control
-                type="email"
+                type="text"
                 value={formProfile.name}
                 required
                 className="mb-3"
@@ -109,6 +109,21 @@ const EditProfileModal = function (props) {
                 setFormProfile({
                   ...formProfile,
                   area: e.target.value,
+                });
+              }}
+            />
+            <Form.Label className="mb-1 text-body-secondary">
+              Informazioni
+            </Form.Label>
+            <Form.Control
+              as="textarea"
+              value={formProfile.bio}
+              rows={4}
+              className="mb-3"
+              onChange={(e) => {
+                setFormProfile({
+                  ...formProfile,
+                  bio: e.target.value,
                 });
               }}
             />

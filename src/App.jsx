@@ -9,7 +9,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getDataAction } from "./redux/action";
 import ModifyExperience from "./components/Experience/ModifyExperience";
-import HomeNews from "./components/Homepage/HomeNews";
+import Homepage from "./components/Homepage/Homepage";
+
 
 function App() {
   //EVENTUALMENTE DA SPOSTARE IN APP.Jsx PER OTTENERE LE INFO DEL PROFILO allo start della pagina
@@ -23,12 +24,13 @@ function App() {
     <BrowserRouter>
       <NavbarLinkedin />
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/experience/modify" element={<ModifyExperience />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <HomeNews />
+
       <FooterLinkedin />
     </BrowserRouter>
   );

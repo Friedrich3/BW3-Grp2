@@ -3,7 +3,7 @@ import ProfileSideBar from "./ProfileSideBar";
 import ProfileMain from "./ProfileMain";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getExpAction } from "../../redux/action";
+import { getDataAction, getExpAction } from "../../redux/action";
 
 const Profile = function () {
   const profilo = useSelector((store) => {
@@ -12,7 +12,7 @@ const Profile = function () {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
+    dispatch(getDataAction())
     dispatch(getExpAction(profilo._id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -20,15 +20,12 @@ const Profile = function () {
   return (
     <Container>
       <Row className="">
-        <Col xs={12} md={8} className="border border-black">
-          <ProfileMain />{" "}
-          {/*      QUI ANDRANNO TUTTI I COMPONENTI DELLA SEZIONE PRINCIPALE QUINDI: BANNERPROFILO , ATTIVITA, ESPERIENZE, FORMAZIONE , COMPETENZE ecc..      */}
-
+        <Col xs={12} md={8} className="">
+          <ProfileMain />
         </Col>
-        <Col xs={12} md={3} className="border border-black">
-          <ProfileSideBar />{" "}
-          {/*      QUI ANDRANNO TUTTI I COMPONENTI DELLA SEZIONE SECONDARIA QUINDI: altre schifezze ,'PERSONE CHE VORRESTI CONOSCERE' ,     */}
-        </Col>
+        <Col xs={12} md={3} className="">
+          <ProfileSideBar />
+          </Col>
       </Row>
     </Container>
   );
