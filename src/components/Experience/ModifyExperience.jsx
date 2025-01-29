@@ -1,9 +1,10 @@
 import { Alert, Button, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import ExperienceListItem from "./ExperienceListItem";
-import { Plus } from "react-bootstrap-icons";
+import { ArrowBarLeft, Plus } from "react-bootstrap-icons";
 import ModalAddExperience from "./ModalAddExperience";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const ModifyExperience = function () {
@@ -13,6 +14,7 @@ const ModifyExperience = function () {
   });
 
   const [addExperience, setAddExperience] = useState(false)
+  const navigate = useNavigate() 
 
   const calcoloDate = function (dataInizio, dataFine) {
     const inizio = new Date(dataInizio);
@@ -47,15 +49,24 @@ const ModifyExperience = function () {
           </Col>
         </Row>
         <Row className="">
-          <Col xs={8}></Col>
+          <Col xs={8}>
+          <Button
+                  variant="outline-secondary"
+                  className=" align-text-top opacity-75"
+                  onClick={() => {navigate('/profile')}}
+                >
+                 
+                  <ArrowBarLeft color="black" size={30}></ArrowBarLeft><span className="fw-bold">Torna Al profilo</span>
+                </Button>
+          </Col>
           <Col xs={4} className="text-end">
           <Button
                   variant="outline-primary"
                   className=" align-text-top opacity-75"
                   onClick={() => {setAddExperience(true)}}
                 >
-                  {/* TODO: AGGIUNGERE MODALE CON PUT PER CAMBIARNE IL CONTENUTO */}
-                  <Plus color="black" size={30}></Plus>AGGIUNGI UN&apos;ESPERIENZA
+    
+                  <Plus color="black" size={30}></Plus><span className="fw-bold">AGGIUNGI UN&apos;ESPERIENZA</span>
                 </Button></Col>
                 {
                 addExperience &&(

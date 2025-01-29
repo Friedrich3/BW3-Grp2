@@ -3,12 +3,16 @@ import { Button, Col, ListGroup, Row } from "react-bootstrap";
 import { PencilFill, TrashFill } from "react-bootstrap-icons";
 import { deleteExpAction, getExpAction } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import ModalModifyExperience from "./ModalModifyExperience";
 
 const ExperienceListItem = function ({ item, calcoloDate, modificable }) {
   const profilo = useSelector((state) => {
     return state.profile.data;
   });
   const dispatch = useDispatch();
+
+  const [modifyExperience, setmodifyExperience] = useState(false)
 
   return (
     <>
@@ -46,7 +50,7 @@ const ExperienceListItem = function ({ item, calcoloDate, modificable }) {
                 <Button
                   variant="outline-warning"
                   className=" align-text-top opacity-75"
-                  onClick={() => {}}
+                  onClick={() => {setmodifyExperience(true)}}
                 >
                   {/* TODO: AGGIUNGERE MODALE CON PUT PER CAMBIARNE IL CONTENUTO */}
                   <PencilFill color="black" size={30}></PencilFill>
@@ -63,6 +67,11 @@ const ExperienceListItem = function ({ item, calcoloDate, modificable }) {
                   {/* TODO: AGGIUNGERE MODALE CON PUT PER CAMBIARNE IL CONTENUTO */}
                   <TrashFill color="black" size={30}></TrashFill>
                 </Button>
+
+                {
+                modifyExperience &&(
+          <ModalModifyExperience setmodifyExperience={setmodifyExperience} profilo={profilo} exp={item} />)
+                }
               </>
             )}
           </Col>
