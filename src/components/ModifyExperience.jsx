@@ -9,8 +9,6 @@ const ModifyExperience = function () {
     return state.experiences.data;
   });
 
-
-
   const calcoloDate = function (dataInizio, dataFine) {
     const inizio = new Date(dataInizio);
     const fine = new Date(dataFine);

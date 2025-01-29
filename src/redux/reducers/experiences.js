@@ -35,7 +35,7 @@ const experiencesReducer = (state = initialState, action) => {
         case DELETE_EXP_SUCCESS:
             return{
                 ...state,
-                data: state.data.filter((e)=> {e._id !== action.payload})
+                data: state.data.filter((e)=> {return e._id !== action.payload})
             }
 
 

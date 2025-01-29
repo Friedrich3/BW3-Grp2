@@ -73,7 +73,7 @@ export const deleteExpAction = (userId,expId) =>{
             if(response.ok){
                 dispatch({
                     type: DELETE_EXP_SUCCESS,
-                    payload: expId
+                    payload:expId
                 })
             }else{
                 throw new Error ('Errore Delete Experience')
