@@ -63,7 +63,7 @@ hr {
   position: absolute;
 }
 
-/*HomePage*/
+/*HomeNews*/
 
 .content {
   display: flex;
@@ -105,4 +105,16 @@ hr {
 }
 .fs-img {
   font-size: 15px;
+}
+
+.news-item {
+  display: block;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.news-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
