@@ -154,332 +154,341 @@ function NavbarLinkedin() {
                   </Link>
                 </Nav.Item>
                 <div
-                        className="nav-link d-flex flex-column align-items-md-center align-items-start gap-1 gap-md-0 
+                  className="nav-link d-flex flex-column align-items-md-center align-items-start gap-1 gap-md-0 
                border border-bottom-0 border-top-0 border-start-0 position-realitve "
-                      >
-                        <img
-                          src={profilo.image}
-                          alt="logo"
-                          className="rounded-circle mt-0 position-absolute"
-                          style={{top:"15px"}}
-                          width={23}
-                          height={23}
-                        />
-                <NavDropdown
-                  title="Tu"
-                  id="basic-nav-dropdown"
-                  align="end"
-                  className="m-0 mb-1 position-relative"
-                  style={{top:"14px"}}
                 >
-                  <NavDropdown.Item onClick={() => navigate("/profile")}>
-                    <div className="d-flex gap-2">
-                      <Col>
-                        <img
-                          src={profilo.image}
-                          alt="profile logo"
-                          width={40}
-                          height={40}
-                          className="rounded-circle"
-                        />
-                      </Col>
-                      <Col>
-                        <div>
-                          <h5>
-                            {profilo.name} {profilo.surname}
-                          </h5>
-                        </div>
-                      </Col>
-                    </div>
-                    <Button
-                      variant="outline-primary"
-                      className="w-100 mt-3 rounded rounded-5"
-                      onClick={() => navigate("/profile_my")}
-                    >
-                      Visualizza profilo
-                    </Button>
-                  </NavDropdown.Item>
-
-                  <NavDropdown.Divider />
-                  <h5 className="ms-3">Account</h5>
-                  <NavDropdown.Item href="#action/3.4">
-                    Impostazioni e privacy
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#">Guida</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Lingua</NavDropdown.Item>
-
-                  <NavDropdown.Divider />
-                  <h5 className="ms-3">Gestisci</h5>
-                  <NavDropdown.Item>
-                  <Link
-                    to="/activity"
-                    className={
-                      location.pathname === "activity"
-                        ? "nav-dropdown active"
-                        : "nav-dropdown"
-                    }>
-                    Post e attività
-                    </Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    href="#"
-                    style={{
-                      maxWidth: "250px",
-                      wordBreak: "break-word",
-                      overflow: "visible",
-                      textOverflow: "ellipsis",
-                    }}
+                  <img
+                    src={profilo.image}
+                    alt="logo"
+                    className="rounded-circle mt-0 position-absolute"
+                    style={{ top: "15px" }}
+                    width={23}
+                    height={23}
+                  />
+                  <NavDropdown
+                    title="Tu"
+                    id="basic-nav-dropdown"
+                    align="end"
+                    className="m-0 mb-1 position-relative"
+                    style={{ top: "14px" }}
                   >
-                    Account per la pubblicazione di..
-                  </NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => navigate("/profile")}>
+                      <div className="d-flex gap-2">
+                        <Col>
+                          <img
+                            src={profilo.image}
+                            alt="profile logo"
+                            width={40}
+                            height={40}
+                            className="rounded-circle"
+                          />
+                        </Col>
+                        <Col>
+                          <div>
+                            <h5>
+                              {profilo.name} {profilo.surname}
+                            </h5>
+                          </div>
+                        </Col>
+                      </div>
+                      <Button
+                        variant="outline-primary"
+                        className="w-100 mt-3 rounded rounded-5"
+                        onClick={() => navigate("/profile_my")}
+                      >
+                        Visualizza profilo
+                      </Button>
+                    </NavDropdown.Item>
 
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#">Esci</NavDropdown.Item>
-                </NavDropdown>
+                    <NavDropdown.Divider />
+                    <h5 className="ms-3">Account</h5>
+                    <NavDropdown.Item href="#action/3.4">
+                      Impostazioni e privacy
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#">Guida</NavDropdown.Item>
+                    <NavDropdown.Item href="#">Lingua</NavDropdown.Item>
+
+                    <NavDropdown.Divider />
+                    <h5 className="ms-3">Gestisci</h5>
+                    <Link
+                      to="/activity"
+                      className={
+                        location.pathname === "activity"
+                          ? "dropdown-item active"
+                          : "dropdown-item"
+                      }
+                    >
+                      Post e attività
+                    </Link>
+                    <NavDropdown.Item
+                      href="#"
+                      style={{
+                        maxWidth: "250px",
+                        wordBreak: "break-word",
+                        overflow: "visible",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      Account per la pubblicazione di..
+                    </NavDropdown.Item>
+
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#">Esci</NavDropdown.Item>
+                  </NavDropdown>
                 </div>
                 <div
-        className="nav-link d-flex flex-column align-items-center gap-1 gap-md-0"
-        onClick={handleShow}
-        
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="gray"
-          className="bi bi-grid-3x3-gap-fill"
-          viewBox="0 0 16 16"
-        >
-          <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
-        </svg>
+                  className="nav-link d-flex flex-column align-items-center gap-1 gap-md-0"
+                  onClick={handleShow}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="gray"
+                    className="bi bi-grid-3x3-gap-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
+                  </svg>
 
-        <span className="mt-1 mx-1" style={{ fontSize: "12px", color: "gray" }}>
-          Per le aziende <IoMdArrowDropdown className="fs-5" />
-        </span>
-      </div>
+                  <span
+                    className="mt-1 mx-1"
+                    style={{ fontSize: "12px", color: "gray" }}
+                  >
+                    Per le aziende <IoMdArrowDropdown className="fs-5" />
+                  </span>
+                </div>
 
-      <Offcanvas show={show} onHide={handleClose} placement="end">
-        <Container className="rounded rounded-3 border-2">
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>
-              <h3>Per le aziende</h3>
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body
-            className="rounded rounded-3 border-2 overflow-auto"
-            style={{ maxHeight: "90vh" }}
-          >
-            <Row>
-              <Col>
-                <Card>
-                  <Card.Header className="bg-white">
-                    <h4>Le mie app</h4>
-                  </Card.Header>
-                  <Card.Body>
-                    <Row className="row-cols-4 gy-3 justify-content-start">
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-center "
-                        >
-                          <BsFillPlayBtnFill className="text-primary fs-1 p-1 offcanvas-link " />
-                          <span
-                            className="text-center"
-                            style={{ color: "gray" }}
-                          >
-                            Learning
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-center "
-                        >
-                          <CgInsights className="text-primary fs-1 p-1 offcanvas-link " />
-                          <span
-                            className="text-center"
-                            style={{ color: "gray" }}
-                          >
-                            Talent Insights
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-center "
-                        >
-                          <BsFillSignpostSplitFill className="text-primary fs-1 p-1 offcanvas-link " />
-                          <span
-                            className="text-center"
-                            style={{ color: "gray" }}
-                          >
-                            Pubblica un&apos;offerta di lavoro
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-center "
-                        >
-                          <GiOnTarget className="text-primary fs-1 p-1 offcanvas-link " />
-                          <span
-                            className="text-center"
-                            style={{ color: "gray" }}
-                          >
-                            Pubblicizza
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-center "
-                        >
-                          <IoMdCompass className="text-primary fs-1 p-1 offcanvas-link " />
-                          <span
-                            className="text-center"
-                            style={{ color: "gray" }}
-                          >
-                            Trova nuovi clienti
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-center "
-                        >
-                          <TiGroup className="text-primary fs-1 p-1 offcanvas-link " />
-                          <span
-                            className="text-center"
-                            style={{ color: "gray" }}
-                          >
-                            Gruppi
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-center "
-                        >
-                          <MdCloudDone className="text-primary fs-1 p-1 offcanvas-link " />
-                          <span
-                            className="text-center"
-                            style={{ color: "gray" }}
-                          >
-                            Marketplace di servizi
-                          </span>
-                        </Link>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-                <Card className="mt-3">
-                  <Card.Header className="bg-white">
-                    <h4>Scopri altro per il business</h4>
-                  </Card.Header>
-                  <Card.Body>
-                    <Row
-                      className=" justify-content-start row-cols-1 gy-3"
-                      id="altroBusiness"
+                <Offcanvas show={show} onHide={handleClose} placement="end">
+                  <Container className="rounded rounded-3 border-2">
+                    <Offcanvas.Header closeButton>
+                      <Offcanvas.Title>
+                        <h3>Per le aziende</h3>
+                      </Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body
+                      className="rounded rounded-3 border-2 overflow-auto"
+                      style={{ maxHeight: "90vh" }}
                     >
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-start "
-                        >
-                          <p className="mb-0 fw-semibold">Assumi su Linkedin</p>
-                          <span style={{ color: "gray" }}>
-                            Trova, attrai e assumi
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-start "
-                        >
-                          <p className="mb-0 fw-semibold">
-                            Vendi con LinkedIn{" "}
-                          </p>
-                          <span style={{ color: "gray" }}>
-                            Sblocca nuove opportunità di vendita{" "}
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-start "
-                        >
-                          <p className="mb-0 fw-semibold">
-                            Offerta di lavoro gratuita{" "}
-                          </p>
-                          <span style={{ color: "gray" }}>
-                            Ottieni rapidamente candidati qualificati{" "}
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-start "
-                        >
-                          <p className="mb-0 fw-semibold">
-                            Fai pubblicità su LinkedIn{" "}
-                          </p>
-                          <span style={{ color: "gray" }}>
-                            Acquisisci clienti e fai crescere la tua azienda{" "}
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-start "
-                        >
-                          <p className="mb-0 fw-semibold">
-                            Impara con LinkedIn{" "}
-                          </p>
-                          <span style={{ color: "gray" }}>
-                            Assumi su LinkedIn
-                          </span>
-                        </Link>
-                      </Col>
-                      <Col>
-                        <Link
-                          to={"/"}
-                          className=" nav-link d-flex flex-column align-items-start "
-                        >
-                          <p className="mb-0 fw-semibold">
-                            Centro amministrazione{" "}
-                          </p>
-                          <span style={{ color: "gray" }}>
-                            Gestisci i dettagli di fatturazione e account
-                          </span>
-                        </Link>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-                <Card className="mt-3">
-                  <Card.Header className="bg-white">
-                    <Link to={"/"} className=" nav-link" id="paginaAziendale">
-                      <p className="mb-0 fw-semibold">
-                        Crea una pagina aziendale +
-                      </p>
-                    </Link>
-                  </Card.Header>
-                </Card>
-              </Col>
-            </Row>
-          </Offcanvas.Body>
-        </Container>
-      </Offcanvas>
+                      <Row>
+                        <Col>
+                          <Card>
+                            <Card.Header className="bg-white">
+                              <h4>Le mie app</h4>
+                            </Card.Header>
+                            <Card.Body>
+                              <Row className="row-cols-4 gy-3 justify-content-start">
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-center "
+                                  >
+                                    <BsFillPlayBtnFill className="text-primary fs-1 p-1 offcanvas-link " />
+                                    <span
+                                      className="text-center"
+                                      style={{ color: "gray" }}
+                                    >
+                                      Learning
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-center "
+                                  >
+                                    <CgInsights className="text-primary fs-1 p-1 offcanvas-link " />
+                                    <span
+                                      className="text-center"
+                                      style={{ color: "gray" }}
+                                    >
+                                      Talent Insights
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-center "
+                                  >
+                                    <BsFillSignpostSplitFill className="text-primary fs-1 p-1 offcanvas-link " />
+                                    <span
+                                      className="text-center"
+                                      style={{ color: "gray" }}
+                                    >
+                                      Pubblica un&apos;offerta di lavoro
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-center "
+                                  >
+                                    <GiOnTarget className="text-primary fs-1 p-1 offcanvas-link " />
+                                    <span
+                                      className="text-center"
+                                      style={{ color: "gray" }}
+                                    >
+                                      Pubblicizza
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-center "
+                                  >
+                                    <IoMdCompass className="text-primary fs-1 p-1 offcanvas-link " />
+                                    <span
+                                      className="text-center"
+                                      style={{ color: "gray" }}
+                                    >
+                                      Trova nuovi clienti
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-center "
+                                  >
+                                    <TiGroup className="text-primary fs-1 p-1 offcanvas-link " />
+                                    <span
+                                      className="text-center"
+                                      style={{ color: "gray" }}
+                                    >
+                                      Gruppi
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-center "
+                                  >
+                                    <MdCloudDone className="text-primary fs-1 p-1 offcanvas-link " />
+                                    <span
+                                      className="text-center"
+                                      style={{ color: "gray" }}
+                                    >
+                                      Marketplace di servizi
+                                    </span>
+                                  </Link>
+                                </Col>
+                              </Row>
+                            </Card.Body>
+                          </Card>
+                          <Card className="mt-3">
+                            <Card.Header className="bg-white">
+                              <h4>Scopri altro per il business</h4>
+                            </Card.Header>
+                            <Card.Body>
+                              <Row
+                                className=" justify-content-start row-cols-1 gy-3"
+                                id="altroBusiness"
+                              >
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-start "
+                                  >
+                                    <p className="mb-0 fw-semibold">
+                                      Assumi su Linkedin
+                                    </p>
+                                    <span style={{ color: "gray" }}>
+                                      Trova, attrai e assumi
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-start "
+                                  >
+                                    <p className="mb-0 fw-semibold">
+                                      Vendi con LinkedIn{" "}
+                                    </p>
+                                    <span style={{ color: "gray" }}>
+                                      Sblocca nuove opportunità di vendita{" "}
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-start "
+                                  >
+                                    <p className="mb-0 fw-semibold">
+                                      Offerta di lavoro gratuita{" "}
+                                    </p>
+                                    <span style={{ color: "gray" }}>
+                                      Ottieni rapidamente candidati qualificati{" "}
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-start "
+                                  >
+                                    <p className="mb-0 fw-semibold">
+                                      Fai pubblicità su LinkedIn{" "}
+                                    </p>
+                                    <span style={{ color: "gray" }}>
+                                      Acquisisci clienti e fai crescere la tua
+                                      azienda{" "}
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-start "
+                                  >
+                                    <p className="mb-0 fw-semibold">
+                                      Impara con LinkedIn{" "}
+                                    </p>
+                                    <span style={{ color: "gray" }}>
+                                      Assumi su LinkedIn
+                                    </span>
+                                  </Link>
+                                </Col>
+                                <Col>
+                                  <Link
+                                    to={"/"}
+                                    className=" nav-link d-flex flex-column align-items-start "
+                                  >
+                                    <p className="mb-0 fw-semibold">
+                                      Centro amministrazione{" "}
+                                    </p>
+                                    <span style={{ color: "gray" }}>
+                                      Gestisci i dettagli di fatturazione e
+                                      account
+                                    </span>
+                                  </Link>
+                                </Col>
+                              </Row>
+                            </Card.Body>
+                          </Card>
+                          <Card className="mt-3">
+                            <Card.Header className="bg-white">
+                              <Link
+                                to={"/"}
+                                className=" nav-link"
+                                id="paginaAziendale"
+                              >
+                                <p className="mb-0 fw-semibold">
+                                  Crea una pagina aziendale +
+                                </p>
+                              </Link>
+                            </Card.Header>
+                          </Card>
+                        </Col>
+                      </Row>
+                    </Offcanvas.Body>
+                  </Container>
+                </Offcanvas>
               </Nav>
             </Container>
           </Navbar>
