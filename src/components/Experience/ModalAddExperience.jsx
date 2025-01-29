@@ -24,11 +24,11 @@ const ModalAddExperience = function (props) {
   const dispatch = useDispatch();
   const handleClose = () => props.setAddExperience(false);
 
-  const handleSubmit = function (event){
-        event.preventDefault();
-        const formCompleto = new FormData(event.target);
-        //console.log(Object.fromEntries(formCompleto))
-        formPost(formCompleto);
+  const handleSubmit = function (event) {
+    event.preventDefault();
+    const formCompleto = new FormData(event.target);
+    //console.log(Object.fromEntries(formCompleto))
+    formPost(formCompleto);
   }
 
 
@@ -39,7 +39,7 @@ const ModalAddExperience = function (props) {
     // element.set
     // console.log(img.name)
     const data = JSON.stringify(Object.fromEntries(element))
-    
+
     try {
       const response = await fetch(endpointPOST, {
         method: "POST",
@@ -58,7 +58,7 @@ const ModalAddExperience = function (props) {
     } catch (error) {
       console.log(error);
     }
-   };
+  };
 
   return (
     <>
@@ -78,29 +78,29 @@ const ModalAddExperience = function (props) {
                   Ruolo*
                 </label>
                 <input
-                id="roleImput"
+                  id="roleImput"
                   type="text"
                   name="role"
                   required
                   className="form-control mb-3"
-                  
+
                 />
                 <label htmlFor="companyImput" className="form-label mb-1 text-body-secondary">
                   Azienda*
                 </label>
                 <input
-                id="companyImput"
+                  id="companyImput"
                   type="text"
                   name="company"
                   required
                   className="form-control mb-3"
-                  
+
                 />
                 <label htmlFor="startDateImput" className="form-label mb-1 text-body-secondary">
                   Data inizio:*
                 </label>
                 <input
-                id="startDateImput"
+                  id="startDateImput"
                   type="date"
                   name="startDate"
                   required
@@ -110,34 +110,34 @@ const ModalAddExperience = function (props) {
                   Data fine:*
                 </label>
                 <input
-                id="endDateImput"
+                  id="endDateImput"
                   type="date"
                   name="endDate"
                   required
                   className="form-control mb-3"
-                  
+
                 />
 
                 <label htmlFor="areaImput" className="form-label mb-1 text-body-secondary">
                   Citta&apos;, Paese, Area*
                 </label>
                 <input
-                id="areaImput"
+                  id="areaImput"
                   type="text"
                   name="area"
                   required
                   className="form-control mb-3"
-                  
+
                 />
                 <label htmlFor="descriptionImput" className="form-label mb-1 text-body-secondary">
                   Descrizione
                 </label>
                 <textarea
-                id="descriptionImput"
+                  id="descriptionImput"
                   rows={3}
                   name="description"
                   className="form-control mb-3"
-                  
+
                 />
                 {/* <label htmlFor="fileImput" className="form-label mb-1 text-body-secondary">
                   Scegli un immagine
@@ -149,16 +149,16 @@ const ModalAddExperience = function (props) {
                   accept="image/*"
                   className="form-control mb-3"
                 /> */}
-              
+
 
                 <small className="mb-1 text-body-secondary display-6 fs-6">
                   *indica che è obbligatorio
                 </small>
                 <br />
                 <small className="mb-1 text-body-secondary display-6 fs-6">
-                  Potrai cambiare l&apos;immagine nella sezione modifica 
+                  Potrai cambiare l&apos;immagine nella sezione modifica
                 </small>
-                
+
                 <div className="d-flex justify-content-between">
                   <Button
                     type="reset"

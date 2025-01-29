@@ -21,7 +21,6 @@ body {
 .custom-hover:hover {
   text-decoration: underline !important;
   color: blue;
-
 }
 
 /* FOOTERMINI */
@@ -54,13 +53,54 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
 /*SideBarProfile.jsx  Larghezza Foto Classe Personale */
 .w-14 {
   width: 14% !important;
 }
 
 /* NAV-BAR */
-.navbar-nav .dropdown-menu{
-  position: absolute
+.navbar-nav .dropdown-menu {
+  position: absolute;
+}
+
+/*HomePage*/
+
+.content {
+  display: flex;
+  align-items: center;
+  line-height: 0.5;
+}
+
+.text-container {
+  margin-left: 10px;
+}
+
+.text-container p {
+  margin: 0;
+}
+.text-decoration-none:visited {
+  color: black;
+}
+.content:hover {
+  background: #ebebeb;
+  width: fit-content;
+  /* padding: 0.2px; */
+}
+.ArrowBarRight {
+  font-size: 25px;
+  margin-bottom: 15px;
+  margin-left: 50px;
+}
+
+.BtnSeggerimenti {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  line-height: 0.9;
+}
+
+.BtnSeggerimenti button {
+  background-color: #fce3bb;
+  border: none;
+  font-weight: 500;
 }
