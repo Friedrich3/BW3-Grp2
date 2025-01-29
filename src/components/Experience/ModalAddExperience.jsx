@@ -14,8 +14,8 @@ const initialExperience = {
   area: "",
   image:""
 };
-const backupImage =
-  "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png";
+// const backupImage =
+//   "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png";
 
 const ModalAddExperience = function (props) {
   const formCompleto = new FormData() //DOPOD A QUI
@@ -45,8 +45,6 @@ const ModalAddExperience = function (props) {
 
   const formPost = async function (element) {
     const endpointPOST = `https://striveschool-api.herokuapp.com/api/profile/${profilo._id}/experiences`;
-
-    //element.append('image', backupImage)
     const data = JSON.stringify(Object.fromEntries(element))
     
     try {
@@ -72,7 +70,8 @@ const ModalAddExperience = function (props) {
   
   
   const expPostImage = async function(userId, expId){
-    formCompleto.set('experience', formExp.image)
+      formCompleto.set('experience', formExp.image)
+
     const urlPostImage =  `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${expId}/picture`
     console.log(Object.fromEntries(formCompleto))
     try {
@@ -233,9 +232,6 @@ const ModalAddExperience = function (props) {
                   *indica che è obbligatorio
                 </small>
                 <br />
-                <small className="mb-1 text-body-secondary display-6 fs-6">
-                  Potrai cambiare l&apos;immagine nella sezione modifica 
-                </small>
                 
                 <div className="d-flex justify-content-between">
                   <Button

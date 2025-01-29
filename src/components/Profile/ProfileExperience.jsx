@@ -78,7 +78,7 @@ const ProfileExperience = function () {
                         <Col xs={1}>
                           <img
                             src={experiences[experiences.length -1].image}
-                            alt="Logo Azienda"
+                            alt=""
                             className="rounded-circle"
                             style={{'width':'50px'}}
                           />
