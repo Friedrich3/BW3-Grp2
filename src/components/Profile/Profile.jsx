@@ -3,7 +3,9 @@ import ProfileSideBar from "./ProfileSideBar";
 import ProfileMain from "./ProfileMain";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { getDataAction, getExpAction } from "../../redux/action";
+
 
 const Profile = function () {
   const profilo = useSelector((store) => {
@@ -23,7 +25,6 @@ const Profile = function () {
         <Col xs={12} md={8} className="">
           <ProfileMain />
           {/*      QUI ANDRANNO TUTTI I COMPONENTI DELLA SEZIONE PRINCIPALE QUINDI: BANNERPROFILO , ATTIVITA, ESPERIENZE, FORMAZIONE , COMPETENZE ecc..      */}
-          
         </Col>
         <Col xs={12} md={3} className="">
           <ProfileSideBar />
