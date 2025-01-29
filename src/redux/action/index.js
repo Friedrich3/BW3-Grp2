@@ -85,3 +85,21 @@ export const deleteExpAction = (userId,expId) =>{
     }
 
 }
+
+export const updateProfileImage = (imageUrl) => ({
+    type: "UPDATE_PROFILE_IMAGE",
+    payload: imageUrl,
+});
+
+const initialState = {
+    profileImage: "",
+};
+
+export const profileReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "UPDATE_PROFILE_IMAGE":
+            return { ...state, profileImage: action.payload };
+        default:
+            return state;
+    }
+};

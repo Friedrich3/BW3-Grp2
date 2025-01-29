@@ -1,13 +1,18 @@
 import { Camera, Trash } from "react-bootstrap-icons";
 import { Modal, Button } from "react-bootstrap";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux"; 
-import { updateProfileImage } from "../redux/actions"; 
+import { updateProfileImage } from "../../redux/action";
 
 const ProfileModalPhoto = ({ profileEdit, setProfilePictureEdit, profilo, userId }) => {
     const inputRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
+
+    // Debugging: Controlliamo se `profilo` è undefined
+    useEffect(() => {
+        console.log("Profilo ricevuto:", profilo);
+    }, [profilo]);
 
     const handleClose = () => setProfilePictureEdit(false);
 
@@ -30,7 +35,7 @@ const ProfileModalPhoto = ({ profileEdit, setProfilePictureEdit, profilo, userId
                 method: "PUT",
                 body: formData,
                 headers: {
-                    Authorization: "Bearer YOUR_ACCESS_TOKEN",
+                    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk3NDU0YTE2ZjYzNTAwMTVmZWNiN2MiLCJpYXQiOjE3Mzc5NjY5MjIsImV4cCI6MTczOTE3NjUyMn0.APtaAFtP0PypOo5hfd4isz08vj_exXfml5SDPxQvOZ4",
                 },
             });
 
@@ -56,7 +61,7 @@ const ProfileModalPhoto = ({ profileEdit, setProfilePictureEdit, profilo, userId
             </Modal.Header>
             <Modal.Body className="bg-dark border-secondary d-flex justify-content-center">
                 <img
-                    src={profilo.image}
+                    src={profilo?.image || "https://via.placeholder.com/150"} //
                     style={{ width: "150px", cursor: "pointer" }}
                     className="rounded-circle border border-3 border-white"
                     alt="Profile"

@@ -55,7 +55,7 @@ const ProfileHero = function (props) {
 
                   {editProfile &&(
 
-                    <EditProfileModal profilo={props.profilo} setEditProfile={setEditProfile} />
+                    <EditProfileModal profilo={props.profilo.image} setEditProfile={setEditProfile} editProfile={setEditProfile} />
 
                   )}
 
