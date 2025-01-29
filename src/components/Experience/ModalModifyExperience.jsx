@@ -1,21 +1,87 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { getExpAction, token } from "../../redux/action";
+import { useDispatch } from "react-redux";
 
 //URL MODIFICA   https://striveschool-api.herokuapp.com/api/profile/:userId/experiences/:expId
 
 const ModalModifyExperience = function (props) {
+  const formCompleto = new FormData()
   const handleClose = () => props.setmodifyExperience(false);
 
   const [formExp, setFormExp] = useState(props.exp);
   const [formImg, setFormImg] = useState()
+
+  const dispatch= useDispatch()
   
 
 
   const handleSubmit = function (event){
     event.preventDefault();
     //const formCompleto = new FormData(event.target);
+    if(formImg === undefined){
+          expPutfetch()
+    }else{
+      formCompleto.set('role',formExp.role)
+      formCompleto.set('company',formExp.company)
+      formCompleto.set('startDate',formExp.startDate)
+      formCompleto.set('endDate',formExp.endDate)
+      formCompleto.set('description',formExp.description)
+      formCompleto.set('area',formExp.area)
+      expPutfetch()
+      expImgPost()
+    }
+}
+
+const expPutfetch= async function(){
+  const urlPUTexp = `https://striveschool-api.herokuapp.com/api/profile/${props.profilo._id}/experiences/${props.exp._id}`
     
+  try {
+      const response = await fetch(urlPUTexp,{
+        method:"PUT",
+        headers:{
+                  Authorization: token,
+                  "Content-Type": "application/json",
+                },
+        body: JSON.stringify(formExp)
+      })
+      if(response.ok){
+        handleClose();
+        dispatch(getExpAction(props.profilo._id));
+      }else{
+        throw new Error('ERRORE PUT EXP')
+      }
+      
+    } catch (error) {
+      console.log('ERROR', error)
+    }
+
+}
+
+const expImgPost = async function (){
+  formCompleto.set('experience', formImg)
+
+        const urlPostImage =  `https://striveschool-api.herokuapp.com/api/profile/${props.profilo._id}/experiences/${props.exp._id}/picture`
+        console.log(Object.fromEntries(formCompleto))
+        try {
+          const response = await fetch(urlPostImage,{
+            method: "POST",
+            headers:{
+              Authorization: token,
+            },
+            body:formCompleto
+          })
+          if(response.ok){
+            dispatch(getExpAction(props.profilo._id));
+          }else{
+            throw new Error ('ERRORE MODIFICA IMMAGINE')
+          }
+        } catch (error) {
+          console.log('ERRORE',error)
+        }
+        
+
 }
 
   return (
@@ -25,7 +91,7 @@ const ModalModifyExperience = function (props) {
             <Modal.Title>Aggiungi Esperienza</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={""}>
+            <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label
                   htmlFor="roleImput"
@@ -161,10 +227,7 @@ const ModalModifyExperience = function (props) {
                   className="form-control mb-3"
                   onChange={(e) => {
                     //formExp.set('experience',e.target.files[0])
-                    setFormExp({
-                      ...formExp,
-                      image: e.target.files[0],
-                    });
+                    setFormImg(e.target.files[0]);
                   }}
                 />
 
