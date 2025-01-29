@@ -2,9 +2,10 @@ export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
 export const GET_DATA_ERROR = 'GET_DATA_ERROR'
 export const GET_EXPS_SUCCESS = 'GET_EXPS_SUCCESS'
 export const GET_EXPS_ERROR = 'GET_EXPS_ERROR'
-export const DELETE_EXP_SUCCESS ='DELETE_EXP_SUCCESS'
+export const DELETE_EXP_SUCCESS = 'DELETE_EXP_SUCCESS'
 export const GET_POST_SUCCESS = 'GET_POST_SUCCESS'
 export const GET_POST_ERROR = 'GET_POST_ERROR'
+export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS'
 
 
 
@@ -62,25 +63,25 @@ export const getExpAction = (userId) => {
         }
     }
 }
-export const deleteExpAction = (userId,expId) =>{
-    return async (dispatch) =>{
+export const deleteExpAction = (userId, expId) => {
+    return async (dispatch) => {
         const endpointDelete = `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${expId}`
         try {
-            const response = await fetch(endpointDelete,{
+            const response = await fetch(endpointDelete, {
                 method: 'DELETE',
-                headers:{
+                headers: {
                     "Authorization": token
                 }
             })
-            if(response.ok){
+            if (response.ok) {
                 dispatch({
                     type: DELETE_EXP_SUCCESS,
-                    payload:expId
+                    payload: expId
                 })
-            }else{
-                throw new Error ('Errore Delete Experience')
+            } else {
+                throw new Error('Errore Delete Experience')
             }
-            
+
         } catch (error) {
             console.log(error)
         }
@@ -111,6 +112,31 @@ export const getPostAction = () => {
                 type: GET_POST_ERROR,
                 payload: error
             })
+        }
+    }
+}
+
+export const handleDeleteAction = (postId) => {
+    return async (dispatch) =>{
+        const urlDELETEpost = `https://striveschool-api.herokuapp.com/api/posts/${postId}`
+        try {
+            const response = await fetch(urlDELETEpost, {
+                method: 'DELETE',
+                headers: {
+                    "Authorization": token,
+                }
+            })
+            if (response.ok) {
+                dispatch({
+                    type: DELETE_POST_SUCCESS,
+                    payload: postId
+                })
+            } else {
+                throw new Error("ERRORE DELETE POSTs")
+            }
+            
+        } catch (error) {
+            console.log('ERRORE', error)
         }
     }
 }

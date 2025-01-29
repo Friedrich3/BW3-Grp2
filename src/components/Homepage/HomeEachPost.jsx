@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Card, Dropdown, DropdownButton } from "react-bootstrap";
 import {
   Gear,
@@ -8,39 +9,15 @@ import {
   PencilFill,
   Trash,
 } from "react-bootstrap-icons";
-import { useSelector } from "react-redux";
-import { token } from "../../redux/action";
+import { useDispatch, useSelector } from "react-redux";
+import { handleDeleteAction } from "../../redux/action";
 
 const HomeEachPost = function (props) {
   const profilo = useSelector((state) => {
     return state.profile.data;
   });
   const [isLiked, setIsLiked] = useState(false);
-
-  useEffect(() => {}, [props]);
-  
-
-  const handleDelete = async () =>{
-      const urlDELETEpost = `https://striveschool-api.herokuapp.com/api/posts/${props.element._id}`
-      try {
-        const response = await fetch(urlDELETEpost,{
-          method:'DELETE',
-          headers:{
-            Authorization: token,
-          }
-        })
-        if(response.ok){
-          return
-        }else{
-          throw new Error('ERRORE DELETE')
-        }
-
-      } catch (error) {
-        console.log('ERRORE',error)
-      }
-  }
-
-
+  const dispatch = useDispatch();
 
   return (
     <Card className="mb-1">
@@ -63,9 +40,18 @@ const HomeEachPost = function (props) {
           </div>
           <div className="ms-auto">
             {profilo._id === props.element.user._id && (
-              <DropdownButton variant='light' title={<Gear/>}>
-                <Dropdown.Item onClick={()=>{}}><PencilFill/> Modifica</Dropdown.Item>
-                <Dropdown.Item onClick={()=>{handleDelete()}}><Trash/> Elimina</Dropdown.Item>
+              <DropdownButton variant="light" title={<Gear />}>
+                <Dropdown.Item onClick={() => {}}>
+                  <PencilFill /> Modifica
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    dispatch(handleDeleteAction(props.element._id));
+                    props.setRender(!props.render)
+                  }}
+                >
+                  <Trash /> Elimina
+                </Dropdown.Item>
               </DropdownButton>
             )}
           </div>
