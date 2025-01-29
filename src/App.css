@@ -3,24 +3,27 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  overflow-x: hidden;
   background-color: #f4f2ee;
 }
 
 /* PROFILEHERO.tsx */
-.custom-border{
+.custom-border {
   border-style: dashed !important;
 }
-.custom-position{
+.custom-position {
   position: absolute;
   bottom: -30px;
-
 }
 
 /* FOOTERLINKEDIN */
-.custom-hover:hover{
-  text-decoration: underline;
+
+.custom-hover:hover {
+  text-decoration: underline !important;
+  color: blue;
+
 }
+
 /* FOOTERMINI */
 #example-custom-modal-styling-title {
   position: absolute;
@@ -40,6 +43,20 @@ body {
   text-decoration: underline;
   color: blue;
 
-  background-color: #F4F2EE;
+  background-color: #f4f2ee;
+}
+
+/*PofileCardsSideBar.jsx */
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/*SideBarProfile.jsx  Larghezza Foto Classe Personale */
+.w-14 {
+  width: 14% !important;
 }
 

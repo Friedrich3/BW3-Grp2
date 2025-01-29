@@ -1,134 +1,125 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import { Button, Card, Col, Modal, Row } from "react-bootstrap";
-import { Camera, PencilSquare, Trash } from "react-bootstrap-icons";
-// import { useDispatch } from "react-redux";
-import { getDataAction } from "../redux/action";
-import { useDispatch, useSelector } from "react-redux";
+import {
+  Camera,
+  PencilSquare,
+  ShieldCheck,
+  Trash,
+} from "react-bootstrap-icons";
+import EditProfileModal from "./EditProfileModal";
+import { useSelector } from "react-redux";
+import ProfileModalPhoto from "./modals/ProfileModalPhoto";
 
+const ProfileHero = function (props) {
+  // HANDLE MODALE ICONA PROFILO
+  const [profilePictureEdit, setProfilePictureEdit] = useState(false);
+  const handleClose = (e) => e(false);
+  const handleShow = (e) => e(true);
 
-const ProfileHero = function () {
+  //Modale Modifica profilo
+  const[editProfile,setEditProfile] = useState(false)
 
-const dispatch = useDispatch()
-const profilo = useSelector((state)=>{ return state.profile.data})
-
-
-    
-    // HANDLE MODALE ICONA PROFILO
-  const [profileEdit, setProfileEdit] = useState(false);
-  const handleClose = () => setProfileEdit(false);
-  const handleShow = () => setProfileEdit(true);
-
-
-    
-
-
-    useEffect(()=>{
-            dispatch(getDataAction()) 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-
-
-
+  //Redux STore delle esperienze
+  const lastExp = useSelector((store) => {
+    return store.experiences.data[store.experiences.data.length -1];
+  });
 
   return (
     <>
-    {profilo  &&
-   
-      <Card className="">
-        <Card.Img variant="top" src="https://placecats.com/500/120" />
+      {props && (
+        <Card className="">
+          <Card.Img
+            variant="top"
+            src="../public/assets/PlaceholderBackground.jpeg"
+          />
 
-        <Card.Body className="">
-          <Row className="">
-            <Col xs={2}>
-              <div className="position-relative">
-                <Card.Img
-                  src="https://placecats.com/100/100"
-                  style={{ width: "150px" }}
-                  className=" rounded-circle border border-3 border-white custom-position"
-                  onClick={handleShow}
-                />
-                {/* MODALE MODICA ICONA PROFILO */}
-                {profileEdit && (
-                  <div
-                    className="modal show"
-                    style={{ display: "block", position: "initial" }}
-                  >
-                    <Modal
-                      show={profileEdit}
-                      onHide={handleClose}
-                      animation={false}
-                      className="text-white"
-                    >
-                      <Modal.Header
-                        closeButton
-                        className=" bg-dark border-secondary"
-                      >
-                        <Modal.Title>Foto Profilo</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body className=" bg-dark border-secondary d-flex justify-content-center">
-                        <img
-                          src="https://placecats.com/100/100"
-                          style={{ width: "150px" }}
-                          className=" rounded-circle border border-3 border-white"
-                          onClick={handleShow}
-                        />
-                      </Modal.Body>
-                      <Modal.Footer className=" bg-dark border-secondary justify-content-between">
-                        <Button variant="dark">
-                          <Camera />
-                          <br />
-                          Modifica
-                        </Button>
-                        <Button variant="dark">
-                          <Trash></Trash>
-                          <br />
-                          Elimina
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-                  </div>
-                )}
-              </div>
-            </Col>
-            <Col className="text-end">
+          <Card.Body className="">
+            <Row className="">
+              <Col xs={2}>
+                <div className="position-relative">
+                  <Card.Img
+                    src={props.profilo.image}
+                    style={{ width: "150px" }}
+                    className=" rounded-circle border border-3 border-white custom-position"
+                    onClick={()=>{handleShow(setProfilePictureEdit)}}
+                  />
+                  {/* MODALE MODICA ICONA PROFILO */}
+                  {profilePictureEdit && <ProfileModalPhoto profileEdit={profilePictureEdit}
+                                                           setProfilePictureEdit={setProfilePictureEdit}
+                                                           profilo={props.profilo} />}
+                </div>
+              </Col>
+              <Col className="text-end">
+                <Button
+                  variant="outline-secondary"
+                  className="border-0 rounded-circle py-2 align-text-top"
+                  onClick={()=>{setEditProfile(true)}}
+                >
+                  <PencilSquare color="black" size={20}></PencilSquare>
+                </Button>
+              </Col>
+
+                  {editProfile &&(
+
+                    <EditProfileModal profilo={props.profilo} setEditProfile={setEditProfile} />
+
+                  )}
+
+            </Row>
+            <Row>
+              <Col xs={12} md={7}>
+            <div>
+              <Card.Title className=" fs-3 d-flex align-items-center">
+                {`${props.profilo.name} ${props.profilo.surname}`}
+                <ShieldCheck className="ms-2 fs-5"/>
+                {/* <small className="btn btn-outline-primary custom-border py-0 rounded-pill ms-1 fw-medium">
+                  Aggiungi Badge
+                </small> */}
+              </Card.Title>
+              <Card.Text>{props.profilo.title}</Card.Text>
+              <small className="text-secondary">{props.profilo.area}</small>
+            </div>
+              
+              </Col>
+
+              <Col xs={12} md={5} className="border border-1">
+              {lastExp &&(<Row>
+                <Col className="d-flex align-items-center" xs={12}>
+                  <img src={lastExp.image} alt="" className="rounded-circle" style={{'width':'60px'}}/> 
+                <a href="#company" className=" text-decoration-none custom-hover"><span className=" h6 ms-2 text-black">{lastExp.company}</span></a>
+                
+                </Col>
+                <Col className="d-flex" xs={12}>
+                
+                </Col>
+
+              </Row>)}
+              </Col>
+            </Row>
+            <div className="mt-3">
+              <Button
+                variant="primary"
+                className=" rounded-pill me-2 fw-medium"
+              >
+                Disponibile per
+              </Button>
+              <Button
+                variant="outline-primary"
+                className=" rounded-pill me-2 fw-medium"
+              >
+                Aggiungi sezione del profilo
+              </Button>
               <Button
                 variant="outline-secondary"
-                className=" opacity-75 border-0 rounded-circle"
+                className=" rounded-pill me-2 fw-medium"
               >
-                <PencilSquare color="black" size={20}></PencilSquare>
+                Risorse
               </Button>
-            </Col>
-          </Row>
-          <div>
-            <Card.Title className=" fs-3">
-              {`${profilo.name} ${profilo.surname}` }
-              <small className="btn btn-outline-primary custom-border py-0 rounded-pill">
-                Aggiungi Badge
-              </small>
-            </Card.Title>
-            <Card.Text>{profilo.title}</Card.Text>
-            <small className="text-secondary">{profilo.area}</small>
-          </div>
-          <div className="mt-3">
-            <Button variant="primary" className=" rounded-pill me-2 fw-medium">
-              Disponibile per
-            </Button>
-            <Button
-              variant="outline-primary"
-              className=" rounded-pill me-2 fw-medium"
-            >
-              Aggiungi sezione del profilo
-            </Button>
-            <Button
-              variant="outline-secondary"
-              className=" rounded-pill me-2 fw-medium"
-            >
-              Risorse
-            </Button>
-          </div>
-        </Card.Body>
-      </Card>
-       }
+            </div>
+          </Card.Body>
+        </Card>
+      )}
     </>
   );
 };
