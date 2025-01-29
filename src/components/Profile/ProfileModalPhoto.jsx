@@ -13,7 +13,11 @@ const ProfileModalPhoto = ({ profileEdit, setProfilePictureEdit, profilo, userId
     useEffect(() => {
         console.log("Profilo ricevuto:", profilo);
     }, [profilo]);
-
+    
+    if (typeof setProfilePictureEdit !== "function") {
+        console.error("Errore: setProfilePictureEdit non è una funzione!", setProfilePictureEdit);
+        return null; // Evita il rendering se c'è un errore
+    }
     const handleClose = () => setProfilePictureEdit(false);
 
     const handleFileUpload = () => {
