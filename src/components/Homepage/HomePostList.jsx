@@ -7,7 +7,7 @@ const HomePostList = function () {
     return state.post.data;
   });
 
-  const [postList, setPostList] = useState(allPosts);
+  const [postList] = useState(allPosts);
 
 useEffect(()=>{
 

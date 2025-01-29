@@ -4,6 +4,7 @@ import ProfileMain from "./ProfileMain";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataAction, getExpAction } from "../../redux/action";
+import FooterLinkedin from "../FooterLinkedin";
 
 const Profile = function () {
   const profilo = useSelector((store) => {
@@ -18,6 +19,7 @@ const Profile = function () {
   }, []);
 
   return (
+    <>
     <Container>
       <Row className="">
         <Col xs={12} md={8} className="">
@@ -28,6 +30,8 @@ const Profile = function () {
           </Col>
       </Row>
     </Container>
+    <FooterLinkedin />
+    </>
   );
 };
 export default Profile;

@@ -74,9 +74,15 @@ function HomeProfile() {
 
             { isEmpty && (
 
-              <div className="d-flex align-items-center rounded-4 mt-2">
+              <div className="row align-items-center rounded-4 mt-2">
+                  <Col xs={2} md={12} lg={4} xl={3}>
                   <img src={lastExp.image} alt="" className="rounded-circle" style={{'width':'50px'}}/> 
-                <span className=" h6 ms-2 text-black custom-hover pointer" onClick={()=>{navigate('/experience/modify')}}>{lastExp.company}</span>
+                  
+                  </Col>
+                  <Col xs={10} md={12} lg={8} xl={9}>
+                <p className=" h6 ms-2 text-black custom-hover pointer" onClick={()=>{navigate('/experience/modify')}}>{lastExp.company}</p>
+                  
+                  </Col>
                 </div>
             )}
             </div>

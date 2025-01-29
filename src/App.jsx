@@ -4,7 +4,6 @@ import "./App.css";
 import Profile from "./components/Profile/Profile";
 import NavbarLinkedin from "./components/NavbarLinkedin";
 import NotFound from "./components/NotFound";
-import FooterLinkedin from "./components/FooterLinkedin";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getDataAction } from "./redux/action";
@@ -33,7 +32,6 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <FooterLinkedin />
     </BrowserRouter>
   );
 }
