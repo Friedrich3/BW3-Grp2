@@ -210,10 +210,11 @@ const ModalAddExperience = function (props) {
                   
                 />
                 <label htmlFor="fileImput" className="form-label mb-1 text-body-secondary">
-                  Scegli un immagine
+                  Scegli un immagine*
                 </label>
                 <input
                 id="fileImput"
+                required
                   type="file"
                   name="experience"
                   accept="image/*"
