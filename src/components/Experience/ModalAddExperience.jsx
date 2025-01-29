@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Button, Modal } from "react-bootstrap";
-import { getExpAction, token } from "../redux/action";
+import { getExpAction, token } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 
 // const initialExperience = {

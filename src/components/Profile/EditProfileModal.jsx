@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { getDataAction } from "../redux/action";
+import { getDataAction } from "../../redux/action";
 
 const EditProfileModal = function (props) {
   const dispatch = useDispatch();

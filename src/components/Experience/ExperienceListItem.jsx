@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Button, Col, ListGroup, Row } from "react-bootstrap";
 import { PencilFill, TrashFill } from "react-bootstrap-icons";
-import { deleteExpAction, getExpAction } from "../redux/action";
+import { deleteExpAction, getExpAction } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 
 const ExperienceListItem = function ({ item, calcoloDate, modificable }) {

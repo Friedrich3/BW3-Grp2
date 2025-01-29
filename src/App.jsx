@@ -8,7 +8,7 @@ import FooterLinkedin from "./components/FooterLinkedin";
 import { useDispatch, } from "react-redux";
 import { useEffect } from "react";
 import { getDataAction,} from "./redux/action";
-import ModifyExperience from "./components/ModifyExperience";
+import ModifyExperience from "./components/Experience/ModifyExperience";
 
 function App() {
 
