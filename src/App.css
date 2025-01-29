@@ -84,7 +84,6 @@ hr {
 .content:hover {
   background: #ebebeb;
   width: fit-content;
-  /* padding: 0.2px; */
 }
 .ArrowBarRight {
   font-size: 25px;
@@ -103,4 +102,7 @@ hr {
   background-color: #fce3bb;
   border: none;
   font-weight: 500;
+}
+.fs-img {
+  font-size: 15px;
 }
