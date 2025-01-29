@@ -3,14 +3,12 @@ import HomeProfile from "./HomeProfile";
 import HomeNews from "./HomeNews";
 import HomeMain from "./HomeMain";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getPostAction } from "../../redux/action";
+
 
 function Homepage() {
-  const dispatch = useDispatch()
 
   useEffect(()=>{
-    dispatch(getPostAction())
+    
   },[])
 
 

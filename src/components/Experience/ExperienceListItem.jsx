@@ -60,7 +60,7 @@ const ExperienceListItem = function ({ item, calcoloDate, modificable }) {
                   className="align-text-top opacity-75"
                   onClick={() => {
                     dispatch(deleteExpAction(profilo._id, item._id));
-
+                    
                     dispatch(getExpAction(profilo._id))
                   }}
                 >

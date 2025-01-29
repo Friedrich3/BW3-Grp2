@@ -1,4 +1,4 @@
-import { GET_POST_SUCCESS } from "../action"
+import { GET_POST_ERROR, GET_POST_SUCCESS } from "../action"
 
 const initialState ={
     data:[],
@@ -14,6 +14,12 @@ const postReducer = (state = initialState, action) =>{
             return{
                 ...state,
                 data: action.payload
+            }
+
+        case GET_POST_ERROR:
+            return{
+                ...state,
+                error:action.payload
             }
 
         default:

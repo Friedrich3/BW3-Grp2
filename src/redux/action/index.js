@@ -85,7 +85,6 @@ export const deleteExpAction = (userId,expId) =>{
             console.log(error)
         }
     }
-
 }
 
 export const getPostAction = () => {
