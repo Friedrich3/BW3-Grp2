@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import HomeEachPost from "./HomeEachPost";
 
 const HomePostList = function () {
   const allPosts = useSelector((state) => {
     return state.post.data;
   });
+  const dispatch= useDispatch()
 
   const [postList] = useState(allPosts);
-
-useEffect(()=>{
-
-},[postList])
+  
+  useEffect(()=>{
+},[postList, dispatch])
 
   return (
     <>

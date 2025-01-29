@@ -32,8 +32,8 @@ function App() {
     if (profilo && profilo._id) {
       const fetchExpAndPost = async () => {
         await dispatch(getPostAction()),
-          await dispatch(getExpAction(profilo._id)),
-          setIsLoading(false);
+        await dispatch(getExpAction(profilo._id)),
+        setIsLoading(false);
       };
       fetchExpAndPost();
     }
