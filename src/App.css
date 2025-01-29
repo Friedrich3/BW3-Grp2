@@ -63,7 +63,7 @@ hr {
   position: absolute;
 }
 
-/*HomePage*/
+/*HomeNews*/
 
 .content {
   display: flex;
@@ -87,7 +87,7 @@ hr {
 .ArrowBarRight {
   font-size: 25px;
   margin-bottom: 15px;
-  margin-left: 50px;
+  margin-left: 35px;
 }
 
 .BtnSeggerimenti {
@@ -104,4 +104,15 @@ hr {
 }
 .fs-img {
   font-size: 15px;
+}
+
+.news-item {
+  display: block;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.news-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
