@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap-icons";
 import EditProfileModal from "./EditProfileModal";
 import { useSelector } from "react-redux";
+import ProfileModalPhoto from "./modals/ProfileModalPhoto";
 
 const ProfileHero = function (props) {
   // HANDLE MODALE ICONA PROFILO
@@ -44,46 +45,9 @@ const ProfileHero = function (props) {
                     onClick={()=>{handleShow(setProfilePictureEdit)}}
                   />
                   {/* MODALE MODICA ICONA PROFILO */}
-                  {profilePictureEdit && (
-                    <div
-                      className="modal show"
-                      style={{ display: "block", position: "initial" }}
-                    >
-                      <Modal
-                        show={profilePictureEdit}
-                        onHide={()=>{handleClose(setProfilePictureEdit)}}
-                        animation={false}
-                        className="text-white"
-                      >
-                        <Modal.Header
-                          closeButton
-                          className=" bg-dark border-secondary"
-                        >
-                          <Modal.Title>Foto Profilo</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body className=" bg-dark border-secondary d-flex justify-content-center">
-                          <img
-                            src={props.profilo.image}
-                            style={{ width: "150px" }}
-                            className=" rounded-circle border border-3 border-white"
-                            onClick={handleShow}
-                          />
-                        </Modal.Body>
-                        <Modal.Footer className=" bg-dark border-secondary justify-content-between">
-                          <Button variant="dark">
-                            <Camera />
-                            <br />
-                            Modifica
-                          </Button>
-                          <Button variant="dark">
-                            <Trash></Trash>
-                            <br />
-                            Elimina
-                          </Button>
-                        </Modal.Footer>
-                      </Modal>
-                    </div>
-                  )}
+                  {profilePictureEdit && <ProfileModalPhoto profileEdit={profilePictureEdit}
+                                                           setProfilePictureEdit={setProfilePictureEdit}
+                                                           profilo={props.profilo} />}
                 </div>
               </Col>
               <Col className="text-end">
