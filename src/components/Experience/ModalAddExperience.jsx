@@ -30,9 +30,9 @@ const ModalAddExperience = function (props) {
   const dispatch = useDispatch();
   const handleClose = () => props.setAddExperience(false);
 
+
   const handleSubmit = function (event){
         event.preventDefault();
-        //const formCompleto = new FormData(event.target);
         formCompleto.set('role',formExp.role)
         formCompleto.set('company',formExp.company)
         formCompleto.set('startDate',formExp.startDate)
@@ -46,7 +46,7 @@ const ModalAddExperience = function (props) {
   const formPost = async function (element) {
     const endpointPOST = `https://striveschool-api.herokuapp.com/api/profile/${profilo._id}/experiences`;
     const data = JSON.stringify(Object.fromEntries(element))
-    
+
     try {
       const response = await fetch(endpointPOST, {
         method: "POST",
@@ -67,6 +67,7 @@ const ModalAddExperience = function (props) {
       console.log(error);
     }
   };
+
   
   
   const expPostImage = async function(userId, expId){
@@ -93,6 +94,7 @@ const ModalAddExperience = function (props) {
     
    }
 
+
   return (
     <>
       <>
@@ -111,11 +113,12 @@ const ModalAddExperience = function (props) {
                   Ruolo*
                 </label>
                 <input
-                id="roleImput"
+                  id="roleImput"
                   type="text"
                   name="role"
                   required
                   className="form-control mb-3"
+
                   value={formExp.role}
                   onChange={(e)=>{setFormExp({
                       ...formExp,
@@ -124,29 +127,31 @@ const ModalAddExperience = function (props) {
                   )}}
 
                   
+
                 />
                 <label htmlFor="companyImput" className="form-label mb-1 text-body-secondary">
                   Azienda*
                 </label>
                 <input
-                id="companyImput"
+                  id="companyImput"
                   type="text"
                   name="company"
                   required
                   className="form-control mb-3"
+
                   value={formExp.company}
                   onChange={(e)=>{setFormExp({
                     ...formExp,
                     company: e.target.value
                 }
                 )}}
-                  
+
                 />
                 <label htmlFor="startDateImput" className="form-label mb-1 text-body-secondary">
                   Data inizio:*
                 </label>
                 <input
-                id="startDateImput"
+                  id="startDateImput"
                   type="date"
                   name="startDate"
                   required
@@ -162,7 +167,7 @@ const ModalAddExperience = function (props) {
                   Data fine:*
                 </label>
                 <input
-                id="endDateImput"
+                  id="endDateImput"
                   type="date"
                   name="endDate"
                   required
@@ -173,14 +178,13 @@ const ModalAddExperience = function (props) {
                     endDate: e.target.value
                 }
                 )}}
-                  
                 />
 
                 <label htmlFor="areaImput" className="form-label mb-1 text-body-secondary">
                   Citta&apos;, Paese, Area*
                 </label>
                 <input
-                id="areaImput"
+                  id="areaImput"
                   type="text"
                   name="area"
                   required
@@ -191,13 +195,13 @@ const ModalAddExperience = function (props) {
                     area: e.target.value
                 }
                 )}}
-                  
+
                 />
                 <label htmlFor="descriptionImput" className="form-label mb-1 text-body-secondary">
                   Descrizione
                 </label>
                 <textarea
-                id="descriptionImput"
+                  id="descriptionImput"
                   rows={3}
                   name="description"
                   className="form-control mb-3"
@@ -207,7 +211,7 @@ const ModalAddExperience = function (props) {
                     description: e.target.value
                 }
                 )}}
-                  
+
                 />
                 <label htmlFor="fileImput" className="form-label mb-1 text-body-secondary">
                   Scegli un immagine*
@@ -229,11 +233,11 @@ const ModalAddExperience = function (props) {
                 />
               
 
+
                 <small className="mb-1 text-body-secondary display-6 fs-6">
                   *indica che è obbligatorio
                 </small>
-                <br />
-                
+
                 <div className="d-flex justify-content-between">
                   <Button
                     type="reset"

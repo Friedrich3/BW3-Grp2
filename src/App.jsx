@@ -11,6 +11,7 @@ import { getDataAction } from "./redux/action";
 import ModifyExperience from "./components/Experience/ModifyExperience";
 import Homepage from "./components/Homepage/Homepage";
 
+
 function App() {
   //EVENTUALMENTE DA SPOSTARE IN APP.Jsx PER OTTENERE LE INFO DEL PROFILO allo start della pagina
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+
       <FooterLinkedin />
     </BrowserRouter>
   );

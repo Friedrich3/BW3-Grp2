@@ -57,18 +57,71 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
 /*SideBarProfile.jsx  Larghezza Foto Classe Personale */
 .w-14 {
   width: 14% !important;
 }
 
 /* NAV-BAR */
-.navbar-nav .dropdown-menu{
-  position: absolute
+.navbar-nav .dropdown-menu {
+  position: absolute;
 }
+
+/*HomeNews*/
+.content {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.text-container {
+  margin-left: 10px;
+}
+
+.text-container p {
+  margin: 0;
+}
+.text-decoration-none:visited {
+  color: black;
+}
+.content:hover {
+  background: #ebebeb;
+}
+.ArrowBarRight {
+  font-size: 25px;
+  margin-bottom: 15px;
+  margin-left: 35px;
+}
+
+.BtnSeggerimenti {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  line-height: 0.9;
+}
+
+.BtnSeggerimenti button {
+  background-color: #fce3bb;
+  border: none;
+  font-weight: 500;
+}
+.fs-img {
+  font-size: 15px;
+}
+
+.news-item {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.news-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 
 /* RANDOM CSS */
 .pointer{
   cursor: pointer;
 }
+

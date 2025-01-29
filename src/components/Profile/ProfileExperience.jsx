@@ -10,7 +10,6 @@ const ProfileExperience = function () {
   const experiences = useSelector((store) => {
     return store.experiences.data;
   });
-
   //CONTROLL SULLA MODALE DI AGGIUNTA DI UN EXPERIENCE
   const [addExperience, setAddExperience] = useState(false);
   const navigate = useNavigate();
@@ -21,7 +20,6 @@ const ProfileExperience = function () {
     const inizio = new Date(dataInizio);
     const fine = new Date(dataFine);
     let anno = fine.getFullYear() - inizio.getFullYear();
-
     if (
       fine.getMonth() < inizio.getMonth() ||
       (fine.getMonth() === inizio.getMonth() &&
@@ -36,6 +34,7 @@ const ProfileExperience = function () {
 
     return `${anno} Anni - ${mesi} Mesi`;
   };
+
 
   return (
     <>
@@ -82,12 +81,11 @@ const ProfileExperience = function () {
                       <Row>
                         <Col xs={1}>
                           <img
-
                             src={experiences[experiences.length -1].image}
                             alt=""
-
                             className="rounded-circle"
                             style={{ width: "50px" }}
+
                           />
                         </Col>
                         <Col xs={10} className="ms-2">
@@ -101,6 +99,7 @@ const ProfileExperience = function () {
                                 experiences[experiences.length - 1].endDate
                               )}
                             </small>
+
                           </div>
                           <div className="mt-3">
                             <h6>{experiences[experiences.length - 1].role}</h6>
@@ -120,6 +119,7 @@ const ProfileExperience = function () {
                             <small className=" text-secondary">
                               {experiences[experiences.length - 1].area}
                             </small>
+
                             <p className="mt-2">
                               {experiences[experiences.length - 1].description}
                             </p>
