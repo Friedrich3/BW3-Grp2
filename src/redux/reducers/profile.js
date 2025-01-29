@@ -1,4 +1,4 @@
-import { GET_DATA_ERROR, GET_DATA_SUCCESS } from "../action";
+import { GET_DATA_SUCCESS } from "../action";
 
 const initialObject= {
   _id: "",
@@ -10,9 +10,9 @@ const initialObject= {
   bio: "",
   area: "",
   image: "",
-    createdAt: "",
-  updatedAt: "",
- __v: 0,
+  createdAt: '',
+  updatedAt: '',
+  __v: 0,
 };
 const initialState ={
     data:initialObject,
@@ -29,11 +29,6 @@ const profileReducer = (state = initialState, action) => {
             return{
                 ...state,
                 data: action.payload
-            }
-        case GET_DATA_ERROR:
-            return{
-                ...state,
-                error: action.payload
             }
 
 
