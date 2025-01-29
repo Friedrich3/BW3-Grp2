@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Camera,Trash,} from "react-bootstrap-icons" 
 import { Modal, Button } from "react-bootstrap";
