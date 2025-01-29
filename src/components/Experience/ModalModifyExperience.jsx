@@ -8,10 +8,17 @@ const ModalModifyExperience = function (props) {
   const handleClose = () => props.setmodifyExperience(false);
 
   const [formExp, setFormExp] = useState(props.exp);
-  console.log(formExp)
+  const [formImg, setFormImg] = useState()
+  
+
+
+  const handleSubmit = function (event){
+    event.preventDefault();
+    //const formCompleto = new FormData(event.target);
+    
+}
 
   return (
-    <>
       <>
         <Modal show={true} onHide={handleClose}>
           <Modal.Header closeButton>
@@ -72,7 +79,7 @@ const ModalModifyExperience = function (props) {
                   name="startDate"
                   required
                   className="form-control mb-3"
-                  value={new Date(formExp.startDate)}
+                  value={formExp.startDate.slice(0,10)}
                   onChange={(e) => {
                     setFormExp({
                       ...formExp,
@@ -92,7 +99,7 @@ const ModalModifyExperience = function (props) {
                   name="endDate"
                   required
                   className="form-control mb-3"
-                  value={new Date(formExp.endDate)}
+                  value={formExp.endDate.slice(0,10)}
                   onChange={(e) => {
                     setFormExp({
                       ...formExp,
@@ -179,7 +186,7 @@ const ModalModifyExperience = function (props) {
           </Modal.Body>
         </Modal>
       </>
-    </>
+    
   );
 };
 export default ModalModifyExperience;
