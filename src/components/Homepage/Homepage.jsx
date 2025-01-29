@@ -2,8 +2,18 @@ import { Container, Row, Col } from "react-bootstrap";
 import HomeProfile from "./HomeProfile";
 import HomeNews from "./HomeNews";
 import HomeMain from "./HomeMain";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getPostAction } from "../../redux/action";
 
 function Homepage() {
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(getPostAction())
+  },[])
+
+
   return (
     <Container className="pt-4">
       <Row className="gx-5">

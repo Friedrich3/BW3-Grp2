@@ -3,6 +3,8 @@ export const GET_DATA_ERROR = 'GET_DATA_ERROR'
 export const GET_EXPS_SUCCESS = 'GET_EXPS_SUCCESS'
 export const GET_EXPS_ERROR = 'GET_EXPS_ERROR'
 export const DELETE_EXP_SUCCESS ='DELETE_EXP_SUCCESS'
+export const GET_POST_SUCCESS = 'GET_POST_SUCCESS'
+export const GET_POST_ERROR = 'GET_POST_ERROR'
 
 
 
@@ -84,4 +86,32 @@ export const deleteExpAction = (userId,expId) =>{
         }
     }
 
+}
+
+export const getPostAction = () => {
+    return async (dispatch) => {
+        const endpoint = 'https://striveschool-api.herokuapp.com/api/posts/'
+        try {
+            const response = await fetch(endpoint, {
+                headers: {
+                    "Authorization": token
+                }
+            })
+            if (response.ok) {
+                const data = await response.json()
+                dispatch({
+                    type: GET_POST_SUCCESS,
+                    payload: data
+                })
+            } else {
+                throw new Error('Errore Fetch Profilo')
+            }
+        } catch (error) {
+            console.log(error)
+            dispatch({
+                type: GET_POST_ERROR,
+                payload: error
+            })
+        }
+    }
 }

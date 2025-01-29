@@ -18,10 +18,7 @@ const HomeMain = function (){
             <hr color="black"/>
             <Row>
                 <Col  className="p-0">
-                <Card>
-                <h5>sezione tutti  post</h5>
                 <HomePostList />
-                </Card>
                 </Col>
             </Row>
         </Container>
