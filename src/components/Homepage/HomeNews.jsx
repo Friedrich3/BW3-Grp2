@@ -3,7 +3,7 @@ import { InfoSquareFill, ChevronCompactDown } from "react-bootstrap-icons";
 import { ArrowBarRight } from "react-bootstrap-icons";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
-const NewsCard = () => {
+const HomeNews = () => {
   return (
     <Card style={{ width: "18rem", marginBottom: "20px" }}>
       <Card.Body>
@@ -108,4 +108,4 @@ const NewsCard = () => {
   );
 };
 
-export default NewsCard;
+export default HomeNews;

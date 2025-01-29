@@ -1,5 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import HomeProfile from "./HomeProfile";
+import HomeNews from "./HomeNews";
+import HomeMain from "./HomeMain";
 
 function Homepage() {
   return (
@@ -8,11 +10,11 @@ function Homepage() {
         <Col md={3}>
           <HomeProfile />
         </Col>
-        <Col md={6}>
-          <p>Colonna 2</p>
+        <Col md={6} className="p-0">
+          <HomeMain />
         </Col>
         <Col md={3}>
-          <p>Colonna 3</p>
+          <HomeNews />
         </Col>
       </Row>
     </Container>
