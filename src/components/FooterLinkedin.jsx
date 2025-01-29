@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 import {
   GearFill,
@@ -7,11 +8,9 @@ import {
 
 const FooterLinkedin = function () {
   return (
-
     <footer className="container py-5">
-      <Row >
+      <Row>
         <Col md={12} lg={6}>
-
           <div className="row">
             {/* prima colonna con lista di link vuoti */}
             <div className="col">
@@ -20,79 +19,78 @@ const FooterLinkedin = function () {
                 style={{ fontSize: "12px" }}
               >
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Informazioni
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Informativa sulla community professionale
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Privacy e condizioni
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Sales Solutions
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Centro sicurezza
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Accessibilità
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Carriera
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Opzioni per gli annunci pubblicitari
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Mobile
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Talent Solutions
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Soluzioni di marketing
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Pubblicità
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Piccole imprese
-                  </a>
+                  </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <a href="#" className="text-decoration-none text-secondary">
+                  <Link to="/" className="text-decoration-none text-secondary">
                     Centro sicurezza
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
-
         </Col>
 
         <Col md={12} lg={6}>
@@ -103,8 +101,8 @@ const FooterLinkedin = function () {
                 <div className="d-flex gap-3">
                   <QuestionCircleFill className="text-dark fs-4" />
                   <div className="text-secondary">
-                    <a
-                      href="#"
+                    <Link
+                      to="/"
                       className="text-decoration-none text-secondary"
                     >
                       <p
@@ -113,7 +111,7 @@ const FooterLinkedin = function () {
                       >
                         Domande?
                       </p>
-                    </a>
+                    </Link>
                     <p className="text-muted" style={{ fontSize: "12px" }}>
                       Visita il nostro Centro assistenza.
                     </p>
@@ -124,8 +122,8 @@ const FooterLinkedin = function () {
                 <div className="d-flex gap-3">
                   <GearFill className="text-dark fs-4" />
                   <div className="text-secondary">
-                    <a
-                      href="#"
+                    <Link
+                      to="/"
                       className="text-decoration-none text-secondary"
                     >
                       <p
@@ -134,7 +132,7 @@ const FooterLinkedin = function () {
                       >
                         Gestisci il tuo account e la tua privacy
                       </p>
-                    </a>
+                    </Link>
                     <p className="text-muted" style={{ fontSize: "12px" }}>
                       Vai alle impostazioni
                     </p>
@@ -145,8 +143,8 @@ const FooterLinkedin = function () {
                 <div className="d-flex gap-3">
                   <ShieldShaded className="text-dark fs-4" />
                   <div className="text-secondary">
-                    <a
-                      href="#"
+                    <Link
+                      to="/"
                       className="text-decoration-none text-secondary"
                     >
                       <p
@@ -155,7 +153,7 @@ const FooterLinkedin = function () {
                       >
                         Trasparenza sui contenuti consigliati
                       </p>
-                    </a>
+                    </Link>
                     <p className="text-muted" style={{ fontSize: "12px" }}>
                       Scopri di più sui contenuti consigliati.
                     </p>
@@ -166,10 +164,7 @@ const FooterLinkedin = function () {
 
             <div className="dropdown w-100 d-flex justify-content-start justify-content-md-start align-items-start">
               <div>
-                <p
-                  className="m-0 text-secondary"
-                  style={{ fontSize: "12px" }}
-                >
+                <p className="m-0 text-secondary" style={{ fontSize: "12px" }}>
                   Seleziona lingua
                 </p>
                 <select
@@ -185,10 +180,7 @@ const FooterLinkedin = function () {
               </div>
             </div>
           </div>
-
-
         </Col>
-
       </Row>
       {/* copyright */}
       <div className="row mt-3 pt-2">
@@ -196,8 +188,7 @@ const FooterLinkedin = function () {
           LinkedIn Corporation &copy; 2025{" "}
         </p>
       </div>
-    </footer >
-
+    </footer>
   );
 };
 
