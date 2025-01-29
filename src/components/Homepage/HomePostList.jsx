@@ -18,7 +18,7 @@ useEffect(()=>{
       <div>
         {postList.toReversed().map((element, index) => {
           if (index < 10) {
-            return <HomeEachPost key={element.id} element={element} />
+            return <HomeEachPost key={element._id} element={element} />
           }
           return;
         })}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import * as Icons from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 //import { HomeImage } from "../../public/assets/PlaceholderBackground.jpeg";
 
 function HomeProfile() {
@@ -45,7 +45,7 @@ function HomeProfile() {
                     src={profilo.image}
                     style={{ width: "50px" , bottom: '-10px' }}
                     className=" rounded-circle border border-3 border-white custom-position"
-
+                  onClick={()=>{navigate('/profile')}}
                   />
                   </div>
                   </Col>
@@ -53,7 +53,7 @@ function HomeProfile() {
             </Row>
           
             {/* <Icons.PersonCircle className="display-3" /> */}
-            <h4>{profilo.name} {profilo.surname}</h4>
+            <h4><Link to={'/profile'} className="text-black text-decoration-none">{profilo.name} {profilo.surname}</Link></h4>
             <small className="text-secondary">{profilo.title}</small>
             <br/>
             <small className="text-secondary">{profilo.area}</small>
