@@ -112,6 +112,21 @@ const EditProfileModal = function (props) {
                 });
               }}
             />
+            <Form.Label className="mb-1 text-body-secondary">
+              Informazioni
+            </Form.Label>
+            <Form.Control
+              as="textarea"
+              value={formProfile.bio}
+              rows={4}
+              className="mb-3"
+              onChange={(e) => {
+                setFormProfile({
+                  ...formProfile,
+                  bio: e.target.value,
+                });
+              }}
+            />
             <small className="mb-1 text-body-secondary display-6 fs-6">
               *indica che è obbligatorio
             </small>
