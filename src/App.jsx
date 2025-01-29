@@ -5,16 +5,18 @@ import Profile from "./components/Profile";
 import NavbarLinkedin from "./components/NavbarLinkedin";
 import NotFound from "./components/NotFound";
 import FooterLinkedin from "./components/FooterLinkedin";
-import { useDispatch } from "react-redux";
+import { useDispatch, } from "react-redux";
 import { useEffect } from "react";
-import { getDataAction } from "./redux/action";
+import { getDataAction,} from "./redux/action";
+import ModifyExperience from "./components/ModifyExperience";
 
 function App() {
+
 
     //EVENTUALMENTE DA SPOSTARE IN APP.Jsx PER OTTENERE LE INFO DEL PROFILO allo start della pagina
     const dispatch = useDispatch()
     useEffect(()=>{
-        dispatch(getDataAction()) 
+        dispatch(getDataAction())
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
 
@@ -23,6 +25,7 @@ function App() {
       <NavbarLinkedin />
       <Routes>
         <Route path="/profile" element={<Profile />} />
+        <Route path="/experience/modify" element={<ModifyExperience />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -30,7 +30,7 @@ const ProfileHero = function (props) {
         <Card className="">
           <Card.Img
             variant="top"
-            src="../public/assets/PlaceholderBackground.jpeg"
+            src="../assets/PlaceholderBackground.jpeg"
           />
 
           <Card.Body className="">

@@ -1,4 +1,4 @@
-import { GET_EXPS_ERROR, GET_EXPS_SUCCESS } from "../action";
+import { DELETE_EXP_SUCCESS, GET_EXPS_ERROR, GET_EXPS_SUCCESS } from "../action";
 
 // const initialObject = {
 //     role: "",
@@ -31,6 +31,11 @@ const experiencesReducer = (state = initialState, action) => {
             return{
                 ...state,
                 error:action.payload
+            }
+        case DELETE_EXP_SUCCESS:
+            return{
+                ...state,
+                data: state.data.filter((e)=> {return e._id !== action.payload})
             }
 
 

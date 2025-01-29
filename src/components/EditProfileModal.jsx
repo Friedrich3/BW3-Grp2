@@ -17,7 +17,7 @@ const EditProfileModal = function (props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const formPost = async function () {
+  const formPut = async function () {
     const url = "https://striveschool-api.herokuapp.com/api/profile";
     const token =
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk3NDU0YTE2ZjYzNTAwMTVmZWNiN2MiLCJpYXQiOjE3Mzc5NjY5MjIsImV4cCI6MTczOTE3NjUyMn0.APtaAFtP0PypOo5hfd4isz08vj_exXfml5SDPxQvOZ4";
@@ -126,7 +126,7 @@ const EditProfileModal = function (props) {
           >
             Reset
           </Button>
-          <Button variant="primary" onClick={formPost}>
+          <Button variant="primary" onClick={formPut}>
             Salva
           </Button>
         </Modal.Footer>

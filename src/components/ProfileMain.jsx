@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux"
 import ProfileHero from "./ProfileHero"
+import ProfileInfo from "./ProfileInfo"
+import ProfileExperience from "./ProfileExperience"
 
 
 const ProfileMain = function (){
@@ -12,6 +14,8 @@ const ProfileMain = function (){
     return(
         <>
             <ProfileHero profilo={profilo}/>
+            <ProfileInfo />
+            <ProfileExperience />
         </>
     )
 }

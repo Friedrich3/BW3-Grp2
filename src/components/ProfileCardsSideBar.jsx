@@ -18,7 +18,7 @@ const ProfileCardsSideBar = () => {
       {profilo && (
         <Card >
           <Card.Body>
-            <Card.Title>Lingua del Profilo</Card.Title>
+            <Card.Title>Profile Business Email</Card.Title>
             {/*INSERIRE FETCH LINGUA DEL PROFILO SOPRA AL RETURN */}
             <Card.Subtitle className="mb-2 text-muted">
               {profilo.email}
