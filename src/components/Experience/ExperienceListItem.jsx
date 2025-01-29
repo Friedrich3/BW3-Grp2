@@ -18,7 +18,7 @@ const ExperienceListItem = function ({ item, calcoloDate, modificable }) {
     <>
       <ListGroup.Item className="border-0 border-bottom container-fluid">
         <Row>
-          <Col xs={2} lg={1}>
+          <Col xs={2} lg={2}>
             <img
               src={item.image}
               alt=""
@@ -26,7 +26,7 @@ const ExperienceListItem = function ({ item, calcoloDate, modificable }) {
               style={{ width: "50px" }}
             />
           </Col>
-          <Col xs={8} lg={10} className="">
+          <Col xs={8} lg={9} className="">
             <div className="d-flex flex-column">
               <h6>{item.role}</h6>
               <span>{item.company}</span>

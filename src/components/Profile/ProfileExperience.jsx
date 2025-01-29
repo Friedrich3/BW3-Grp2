@@ -79,7 +79,7 @@ const ProfileExperience = function () {
                     {}
                     <ListGroup.Item className="border-0 border-bottom container-fluid">
                       <Row>
-                        <Col xs={1}>
+                        <Col xs={2} lg={2}>
                           <img
                             src={experiences[experiences.length -1].image}
                             alt=""
@@ -88,7 +88,7 @@ const ProfileExperience = function () {
 
                           />
                         </Col>
-                        <Col xs={10} className="ms-2">
+                        <Col xs={10} lg={10} className="">
                           <div id="company">
                             <h6 className="m-0">
                               {experiences[experiences.length - 1].company}
