@@ -67,3 +67,8 @@ hr {
 .navbar-nav .dropdown-menu{
   position: absolute
 }
+
+/* RANDOM CSS */
+.pointer{
+  cursor: pointer;
+}

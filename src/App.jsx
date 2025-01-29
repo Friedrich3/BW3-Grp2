@@ -23,9 +23,9 @@ function App() {
     <BrowserRouter>
       <NavbarLinkedin />
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/experience/modify" element={<ModifyExperience />} />
-        <Route path="/Home" element={<Homepage />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
