@@ -3,7 +3,7 @@ import ProfileSideBar from "./ProfileSideBar";
 import ProfileMain from "./ProfileMain";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getExpAction } from "../redux/action";
+import { getExpAction } from "../../redux/action";
 
 const Profile = function () {
   const profilo = useSelector((store) => {

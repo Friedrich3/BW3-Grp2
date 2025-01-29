@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { PencilSquare, Plus } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
-import ExperienceListItem from "./ExperienceListItem";
-import ModalAddExperience from "./ModalAddExperience";
+import ExperienceListItem from "../Experience/ExperienceListItem";
+import ModalAddExperience from "../Experience/ModalAddExperience";
 import { useNavigate } from "react-router-dom";
 
 const ProfileExperience = function () {
