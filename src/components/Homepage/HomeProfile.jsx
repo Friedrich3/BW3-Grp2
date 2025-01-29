@@ -15,8 +15,9 @@ function HomeProfile() {
             <h4>w.m.Sachidu</h4>
             <h6 className="text-secondary">Milano,Lombardia</h6>
             <button
-              className="text-secondary border"
+              className="text-secondary text-start border-2 w-100"
               style={{ border: "dotted" }}
+              type="submit"
             >
               <Icons.PlusLg />
               <span>Esperienza</span>
