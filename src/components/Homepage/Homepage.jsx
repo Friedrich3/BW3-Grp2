@@ -2,8 +2,16 @@ import { Container, Row, Col } from "react-bootstrap";
 import HomeProfile from "./HomeProfile";
 import HomeNews from "./HomeNews";
 import HomeMain from "./HomeMain";
+import { useEffect } from "react";
+
 
 function Homepage() {
+
+  useEffect(()=>{
+    
+  },[])
+
+
   return (
     <Container className="pt-4">
       <Row className="gx-5">

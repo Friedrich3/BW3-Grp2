@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import * as Icons from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 //import { HomeImage } from "../../public/assets/PlaceholderBackground.jpeg";
 
 function HomeProfile() {
@@ -45,7 +45,7 @@ function HomeProfile() {
                     src={profilo.image}
                     style={{ width: "50px" , bottom: '-10px' }}
                     className=" rounded-circle border border-3 border-white custom-position"
-
+                  onClick={()=>{navigate('/profile')}}
                   />
                   </div>
                   </Col>
@@ -53,7 +53,7 @@ function HomeProfile() {
             </Row>
           
             {/* <Icons.PersonCircle className="display-3" /> */}
-            <h4>{profilo.name} {profilo.surname}</h4>
+            <h4><Link to={'/profile'} className="text-black text-decoration-none">{profilo.name} {profilo.surname}</Link></h4>
             <small className="text-secondary">{profilo.title}</small>
             <br/>
             <small className="text-secondary">{profilo.area}</small>
@@ -74,9 +74,15 @@ function HomeProfile() {
 
             { isEmpty && (
 
-              <div className="d-flex align-items-center rounded-4 mt-2">
+              <div className="row align-items-center rounded-4 mt-2">
+                  <Col xs={2} md={12} lg={4} xl={3}>
                   <img src={lastExp.image} alt="" className="rounded-circle" style={{'width':'50px'}}/> 
-                <span className=" h6 ms-2 text-black custom-hover pointer" onClick={()=>{navigate('/experience/modify')}}>{lastExp.company}</span>
+                  
+                  </Col>
+                  <Col xs={10} md={12} lg={8} xl={9}>
+                <p className=" h6 ms-2 text-black custom-hover pointer" onClick={()=>{navigate('/experience/modify')}}>{lastExp.company}</p>
+                  
+                  </Col>
                 </div>
             )}
             </div>

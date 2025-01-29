@@ -11,8 +11,10 @@ const FooterMini = function () {
       <footer className="mt-4">
         <Container>
           <Row className="text-center">
-            <Col xs={7} md={8} lg={10}></Col>
-            <Col xs={5} md={2} lg={2}>
+            {/* <Col xs={7} md={8} lg={10}></Col> */}
+            <Col xs={12} 
+            // md={2} lg={2}
+            >
               <Nav className="justify-content-center ">
                 <Link to="/" className="footerMini p-1 ">
                   Informazioni
