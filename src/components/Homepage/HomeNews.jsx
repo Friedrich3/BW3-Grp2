@@ -58,7 +58,7 @@ const NewsCard = () => {
           Vedi altro <ChevronCompactDown />
         </button>
       </Card.Body>
-      <div className="bg-white">
+      <div className="bg-white mb-2 ms-2 ">
         <h5>I giochi di oggi</h5>
         <Link
           to="https://www.linkedin.com/games/tango/"
