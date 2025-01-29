@@ -5,21 +5,19 @@ import Profile from "./components/Profile/Profile";
 import NavbarLinkedin from "./components/NavbarLinkedin";
 import NotFound from "./components/NotFound";
 import FooterLinkedin from "./components/FooterLinkedin";
-import { useDispatch, } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getDataAction, } from "./redux/action";
+import { getDataAction } from "./redux/action";
 import ModifyExperience from "./components/Experience/ModifyExperience";
-import HomePage from "./components/HomePage";
+import HomeNews from "./components/Homepage/HomeNews";
 
 function App() {
-
-
   //EVENTUALMENTE DA SPOSTARE IN APP.Jsx PER OTTENERE LE INFO DEL PROFILO allo start della pagina
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getDataAction())
+    dispatch(getDataAction());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <BrowserRouter>
@@ -30,7 +28,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <HomePage />
+      <HomeNews />
       <FooterLinkedin />
     </BrowserRouter>
   );
