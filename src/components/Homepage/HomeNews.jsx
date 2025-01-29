@@ -3,7 +3,6 @@ import { InfoSquareFill, ChevronCompactDown } from "react-bootstrap-icons";
 import { ArrowBarRight } from "react-bootstrap-icons";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
-//dd
 const NewsCard = () => {
   return (
     <Card style={{ width: "18rem", marginBottom: "20px" }}>
@@ -72,7 +71,7 @@ const NewsCard = () => {
             <div className="text-container">
               <p className="fw-bold fs-img pt-3">Tango</p>
               <p>
-                Incorona ogni regione{" "}
+                Incorona ogni regione
                 <ArrowBarRight className="ArrowBarRight" />
               </p>
             </div>
@@ -90,7 +89,7 @@ const NewsCard = () => {
             <div className="text-container">
               <p className="fw-bold fs-img pt-3">Queens</p>
               <p>
-                Incorona ogni regione{" "}
+                Incorona ogni regione
                 <ArrowBarRight className="ArrowBarRight" />
               </p>
             </div>

@@ -68,7 +68,7 @@ hr {
 .content {
   display: flex;
   align-items: center;
-  line-height: 0.5;
+  line-height: 1;
 }
 
 .text-container {
@@ -83,7 +83,6 @@ hr {
 }
 .content:hover {
   background: #ebebeb;
-  width: fit-content;
 }
 .ArrowBarRight {
   font-size: 25px;
