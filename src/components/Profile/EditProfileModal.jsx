@@ -53,7 +53,7 @@ const EditProfileModal = function (props) {
                 Nome*
               </Form.Label>
               <Form.Control
-                type="email"
+                type="text"
                 value={formProfile.name}
                 required
                 className="mb-3"

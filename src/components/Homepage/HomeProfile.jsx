@@ -26,6 +26,7 @@ function HomeProfile() {
     }else{
       setIsEmpty(false) 
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[lastExp])
 
 
