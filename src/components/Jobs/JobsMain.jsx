@@ -7,7 +7,8 @@ import {
   ListGroup,
   Row,
 } from "react-bootstrap";
-import { ArrowDown, ArrowDownSquare, Linkedin, Search, X } from "react-bootstrap-icons";
+import { ArrowDown, Search, X } from "react-bootstrap-icons";
+import JobsListItem from "./JobsListItem";
 
 const categories = [
   "Data",
@@ -30,7 +31,7 @@ const JobsMain = function () {
     handleFetch()
   },[])
 
-  const handleFetch = async function (category = "All others") {
+  const handleFetch = async function (category = categories[Math.floor(Math.random()*categories.length)]) {
     setIsSuggestVisible(false);
     const urlGETcategory = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=3`;
     try {
@@ -59,7 +60,7 @@ const JobsMain = function () {
           <Card>
             <div>
               <div className="d-flex justify-content-between">
-                <h5></h5>
+                <h5 className="mt-2 ms-2">Le principali offerte di lavoro per te</h5>
                 <Button
                   variant="transparent"
                   className="border-0"
@@ -94,16 +95,7 @@ const JobsMain = function () {
                     <ListGroup className="border-0">
                       {suggestList.map((job) => {
                         return (
-                          <ListGroup.Item
-                            className="border-0 border-bottom"
-                            key={job._id}
-                          >
-                            <h5><a href={job.url} target="blank" className=" text-decoration-none" style={{color:'rgba(0, 0, 255, 0.7)'}}>{job.title}</a></h5>
-                            <p className="text-dark m-0">{job.company_name} - <small className="text-secondary">{job.job_type}&nbsp;{job.salary}</small></p>
-                            <small className="text-secondary">{job.candidate_required_location}</small><br />
-                            <small className="text-secondary">Candidati tramite <Linkedin color="blue"/></small>
-
-                          </ListGroup.Item>
+                          <JobsListItem job={job} key={job._id}/>
                         );
                       })}
                     </ListGroup>
