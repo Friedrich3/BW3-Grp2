@@ -1,8 +1,8 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Button, Card, Col, Offcanvas, Row } from "react-bootstrap";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Button, Card, Col, Form, Offcanvas, Row } from "react-bootstrap";
+import {Link, useLocation, useNavigate } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import * as Icon from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
@@ -24,6 +24,13 @@ function NavbarLinkedin() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [search,setSearch] = useState('')
+
+  const handleSubmit = function(e){
+    e.preventDefault()
+    navigate(`/lavoro/${search}`)
+  }
 
   return (
     <header className=" container-fluid p-0">
@@ -52,11 +59,19 @@ function NavbarLinkedin() {
                   </svg>
                 </Link>
                 <Icon.Search className="my-auto mx-1" />
-                <input
+                {/* <input
                   type="text"
                   className="form-control d-none d-lg-block"
                   placeholder="Cerca"
-                />
+                /> */}
+                <Form onSubmit={handleSubmit}>
+                  <Form.Control type="text"
+                  className="form-control d-none d-lg-block"
+                  placeholder="Cerca"
+                  value={search}
+                  onChange={(e)=>(setSearch(e.target.value))}>
+                  </Form.Control>
+                </Form>
               </Nav.Item>
 
               <Nav className="d-flex flex-row align-items-center ">

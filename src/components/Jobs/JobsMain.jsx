@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { ArrowDown, Search, X } from "react-bootstrap-icons";
 import JobsListItem from "./JobsListItem";
+import { useParams } from "react-router-dom";
 
 const categories = [
   "Data",
@@ -23,15 +24,20 @@ const categories = [
 ];
 
 const JobsMain = function () {
+  const params = useParams();
   const [isSuggestOpen, setIsSuggestOpen] = useState(true);
   const [isSuggestVisible, setIsSuggestVisible] = useState(false);
   const [suggestList, setSuggestList] = useState([]);
+  const [search, setSearch] = useState(params.search);
 
-  useEffect(()=>{
-    handleFetch()
-  },[])
+  useEffect(() => {
+    handleFetch();
+    setSearch(params.search);
+  }, [params]);
 
-  const handleFetch = async function (category = categories[Math.floor(Math.random()*categories.length)]) {
+  const handleFetch = async function (
+    category = categories[Math.floor(Math.random() * categories.length)]
+  ) {
     setIsSuggestVisible(false);
     const urlGETcategory = `https://strive-benchmark.herokuapp.com/api/jobs?category=${category}&limit=3`;
     try {
@@ -60,7 +66,9 @@ const JobsMain = function () {
           <Card>
             <div>
               <div className="d-flex justify-content-between">
-                <h5 className="mt-2 ms-2">Le principali offerte di lavoro per te</h5>
+                <h5 className="mt-2 ms-2">
+                  Le principali offerte di lavoro per te
+                </h5>
                 <Button
                   variant="transparent"
                   className="border-0"
@@ -94,9 +102,7 @@ const JobsMain = function () {
                   <Collapse in={isSuggestOpen}>
                     <ListGroup className="border-0">
                       {suggestList.map((job) => {
-                        return (
-                          <JobsListItem job={job} key={job._id}/>
-                        );
+                        return <JobsListItem job={job} key={job._id} />;
                       })}
                     </ListGroup>
                   </Collapse>
@@ -107,7 +113,7 @@ const JobsMain = function () {
         </Row>
         <Row className="mt-2">
           <Card>
-            <h2>Risultati Ricerca</h2>
+            <h5>Risultati Ricerca</h5>
           </Card>
         </Row>
       </Container>

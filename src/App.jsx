@@ -48,7 +48,10 @@ function App() {
       <Routes>
         <Route path="/" element={!isLoading && <Homepage />} />
         <Route path="/profile" element={!isLoading && <Profile />} />
+
         <Route path="/lavoro" element={<Jobs />} />
+        <Route path="/lavoro/:search" element={<Jobs />} />
+
         <Route
           path="/experience/modify"
           element={!isLoading && <ModifyExperience />}
