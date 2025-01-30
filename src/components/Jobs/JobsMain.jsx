@@ -6,6 +6,7 @@ import {
   Container,
   ListGroup,
   Row,
+  Spinner,
 } from "react-bootstrap";
 import { ArrowDown, Search, X } from "react-bootstrap-icons";
 import JobsListItem from "./JobsListItem";
@@ -29,11 +30,25 @@ const JobsMain = function () {
   const [isSuggestVisible, setIsSuggestVisible] = useState(false);
   const [suggestList, setSuggestList] = useState([]);
   const [search, setSearch] = useState(params.search);
+  const [isSearchOpen, setIsSearchOpen] = useState(true)
+  const[searchList, setSearchList]= useState([])
+  const [isSearchLoading, setIsSearchLoading] = useState(true);
 
   useEffect(() => {
     handleFetch();
     setSearch(params.search);
+    if(params!== undefined){
+        awaitFunction()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
+
+  const awaitFunction = async()=>{
+        await fetchSearch()
+        console.log(searchList)
+        setIsSearchLoading(false)
+  }
+
 
   const handleFetch = async function (
     category = categories[Math.floor(Math.random() * categories.length)]
@@ -58,6 +73,28 @@ const JobsMain = function () {
       console.log("ERRORE", error);
     }
   };
+
+  const fetchSearch = async function(){
+    setIsSearchLoading(true)
+        const urlGETsearch = `https://strive-benchmark.herokuapp.com/api/jobs?search=${search}`
+        try {
+            const response = await fetch(urlGETsearch,{
+                method:'GET',
+                headers:{
+                    "Content-Type": "application/json",
+                }})
+                if(response.ok){
+                    const data = await response.json()
+                    setSearchList(data.data)
+                    
+                }else{
+                    throw new Error('Errore GET SearchQuery')
+                }
+        } catch (error) {
+            console.log('ERRORE' ,error)
+            setIsSearchLoading(false)
+        }
+  } 
 
   return (
     <>
@@ -112,9 +149,42 @@ const JobsMain = function () {
           </Card>
         </Row>
         <Row className="mt-2">
-          <Card>
-            <h5>Risultati Ricerca</h5>
-          </Card>
+          {search !== undefined && (
+            <Card>
+                 <div className="d-flex justify-content-between">
+              <h5>Risultati Ricerca</h5>
+              <Button
+                  variant="transparent"
+                  className="border-0"
+                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  aria-controls="example-collapse-text"
+                  aria-expanded={isSearchOpen}
+                >
+                  {isSearchOpen ? <X size={20} /> : <ArrowDown size={20} />}
+                </Button>
+                </div>
+            {isSearchLoading && <Spinner variant="primary" className="text-center" />}
+              {!isSearchLoading && (
+                <>
+                  <hr color="secondary" />
+                  <Collapse in={isSearchOpen}>
+                    <ListGroup className="border-0">
+                    {/* TODO inserire ALERT ERRORE SE searchList.length === 0  */}
+                      {searchList.map((job,index) => {
+                        if(index < 10){
+                            return <JobsListItem job={job} key={job._id} />;
+                        }else{
+                            return
+                        }
+                      })}
+
+                    </ListGroup>
+                  </Collapse>
+                </>
+              )}
+
+            </Card>
+          )}
         </Row>
       </Container>
     </>
