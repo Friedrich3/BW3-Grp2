@@ -40,13 +40,12 @@ const FooterMini = function () {
                 <Link to="/" className="footerMini p-1 ">
                   Scarica l’app LinkedIn.
                 </Link>
-                <Link
-                  to="/"
+                <Nav.Link
                   className="footerMini p-1 "
                   onClick={() => setShow(true)}
                 >
                   Altro.
-                </Link>
+                </Nav.Link>
                 <Modal
                   show={show}
                   onHide={() => setShow(false)}

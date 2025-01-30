@@ -117,7 +117,9 @@ function JobsSidebar() {
           <span>Pubblica offerta gratuita</span>
         </div>
       </div>
-      <FooterMini />
+      <div className="d-none d-md-block">
+        <FooterMini />
+      </div>
     </Container>
   );
 }
