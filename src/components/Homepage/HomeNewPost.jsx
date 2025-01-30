@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import CreatePostModal from "./CreatePostModal";
+import { CalendarPlus, Image, Newspaper } from "react-bootstrap-icons";
 
 const HomeNewPost = function () {
 
@@ -28,9 +29,9 @@ const HomeNewPost = function () {
             </Row>
             <hr color="secondary"/>
             <div className="d-flex justify-content-around">
-              <Button>Bottone 1</Button>
-              <Button>Bottone 1</Button>
-              <Button>Bottone 1</Button>
+              <Button variant="transparent" className="homepage-button rounded-0 px-0 py-2 fw-medium"><Image color="#378FE9"/> Contenuti Multimediali</Button>
+              <Button variant="transparent" className="homepage-button rounded-0 px-0 py-2 fw-medium"><CalendarPlus color="#C37D16"/> Evento</Button>
+              <Button variant="transparent" className="homepage-button rounded-0 px-0 py-2 fw-medium"><Newspaper color="#E06847"/> Scrivi un articolo</Button>
             </div>
           
         </Card.Body>

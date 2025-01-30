@@ -11,7 +11,7 @@ const HomePostList = function () {
   const[render,setRender] = useState(false)
   
   useEffect(()=>{
-    console.log('renderizzato Lista') //TODO
+     //TODO AGGIORNARE LISTA POST
 },[render])
 
   return (
