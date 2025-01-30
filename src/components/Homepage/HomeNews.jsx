@@ -3,8 +3,10 @@ import { InfoSquareFill, ChevronCompactDown } from "react-bootstrap-icons";
 import { ArrowBarRight } from "react-bootstrap-icons";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
+import FooterMini from "../FooterMini";
 const HomeNews = () => {
   return (
+    <>
     <Card style={{ width: "18rem", marginBottom: "20px" }}>
       <Card.Body>
         <Card.Title className="d-flex justify-content-between align-items-center">
@@ -105,6 +107,8 @@ const HomeNews = () => {
             </button> */}
       </div>
     </Card>
+    <FooterMini />
+    </>
   );
 };
 

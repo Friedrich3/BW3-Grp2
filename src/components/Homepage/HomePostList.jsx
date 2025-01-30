@@ -1,11 +1,25 @@
-const HomePostList = function (){
+import { useSelector } from "react-redux";
+import HomeEachPost from "./HomeEachPost";
 
-    return(
-        <>
-        
-        </>
+const HomePostList = function () {
+  const allPosts = useSelector((state) => {
+    return state.post.data;
+  });
+  //const dispatch= useDispatch()
+  
 
-    )
 
-}
-export default HomePostList
+  return (
+    <>
+      <div>
+        {allPosts.toReversed().map((element, index) => {
+          if (index < 10) {
+            return <HomeEachPost key={element._id} element={element}/>
+          }
+          return;
+        })}
+      </div>
+    </>
+  );
+};
+export default HomePostList;

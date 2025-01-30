@@ -11,7 +11,9 @@ const FooterMini = function () {
       <footer className="mt-4">
         <Container>
           <Row className="text-center">
+
             <Col >
+
               <Nav className="justify-content-center ">
                 <Link to="/" className="footerMini p-1 ">
                   Informazioni
@@ -37,13 +39,12 @@ const FooterMini = function () {
                 <Link to="/" className="footerMini p-1 ">
                   Scarica l’app LinkedIn.
                 </Link>
-                <Link
-                  to="/"
+                <Nav.Link
                   className="footerMini p-1 "
                   onClick={() => setShow(true)}
                 >
                   Altro.
-                </Link>
+                </Nav.Link>
                 <Modal
                   show={show}
                   onHide={() => setShow(false)}
