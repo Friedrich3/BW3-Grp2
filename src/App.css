@@ -37,14 +37,14 @@ body {
   margin: 0;
 }
 .footerMini {
-  text-decoration: none;
-  color: black;
-  font-size: 11px;
+  text-decoration: none !important;
+  color: black ;
+  font-size: 11px ;
 }
 
 .footerMini:hover {
-  text-decoration: underline;
-  color: blue;
+  text-decoration: underline !important;
+  color: rgba(0, 0, 255, 0.468);
 
   background-color: #f4f2ee;
 }
