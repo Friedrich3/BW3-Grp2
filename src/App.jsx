@@ -39,7 +39,6 @@ function App() {
       };
       fetchExpAndPost();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profilo, dispatch]);
 
   return (
