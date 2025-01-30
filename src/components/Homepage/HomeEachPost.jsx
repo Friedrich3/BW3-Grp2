@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button, Card, Dropdown, DropdownButton, Form } from "react-bootstrap";
 import { Gear, HandThumbsUp, HandThumbsUpFill, PencilFill, Trash } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { handleDeleteAction, handleUpdateAction } from "../../redux/action";
+import { getPostAction, handleDeleteAction, token } from "../../redux/action";
 
 const HomeEachPost = function (props) {
   const profilo = useSelector((state) => state.profile.data);
@@ -12,10 +12,30 @@ const HomeEachPost = function (props) {
   const [editedText, setEditedText] = useState(props.element.text);
   const dispatch = useDispatch();
 
-  const handleSave = () => {
-    dispatch(handleUpdateAction(props.element._id, editedText)); // Azione Redux per aggiornare il post
-    setIsEditing(false);
-  };
+  //DAFIXARE IN CASO
+  // const handleSave = () => {
+  //   dispatch(handleUpdateAction(props.element._id, editedText, props.element)); // Azione Redux per aggiornare il post
+  //   setIsEditing(false);
+  // };
+
+  const handleSave = async ()=>{
+    try {
+            const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${props.element._id}`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" ,"Authorization": token},
+              body: JSON.stringify({...props.element,
+                                      text: editedText }),
+            });
+            if (response.ok){
+              setIsEditing(false)
+                dispatch(getPostAction())
+            }else{
+             throw new Error("Errore nell'aggiornamento");
+             } 
+          } catch (error) {
+            console.error("Errore:", error);
+          }
+  }
 
   return (
     <Card className="mb-1">
