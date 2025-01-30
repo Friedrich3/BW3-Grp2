@@ -121,7 +121,7 @@ const JobsMain = function () {
                   return (
                     <Button
                       key={index}
-                      className="rounded-pill mb-1 me-1"
+                      className="rounded-pill mb-1 me-1 fw-medium"
                       variant="outline-primary"
                       onClick={() => {
                         handleFetch(category);
