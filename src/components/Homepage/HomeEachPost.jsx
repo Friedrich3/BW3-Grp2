@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button, Card, Dropdown, DropdownButton } from "react-bootstrap";
