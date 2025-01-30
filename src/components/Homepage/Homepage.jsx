@@ -20,13 +20,13 @@ function Homepage() {
   return (
     <Container className="pt-4">
       <Row className="gx-5">
-        <Col md={3}>
+        <Col lg={3} className="p-0">
           <HomeProfile />
         </Col>
-        <Col md={6} className="p-0">
+        <Col lg={6} className="p-0">
           <HomeMain />
         </Col>
-        <Col md={3}>
+        <Col lg={3}>
           <HomeNews />
         </Col>
       </Row>

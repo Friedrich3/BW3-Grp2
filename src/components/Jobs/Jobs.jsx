@@ -6,10 +6,10 @@ function Jobs() {
   return (
     <Container className="pt-4">
       <Row>
-        <Col md={3}>
+        <Col lg={3}>
           <JobsSidebar />
         </Col>
-        <Col md={9}>
+        <Col lg={9}>
           <JobsMain />
         </Col>
       </Row>

@@ -1,5 +1,5 @@
 
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import ProfileSideBar from "./ProfileSideBar";
 import ProfileMain from "./ProfileMain";
 import { useEffect } from "react";
@@ -24,16 +24,16 @@ const Profile = function () {
 
   return (
     <>
-    <Container>
+    <div className=" container-fluid container-lg mt-2">
       <Row className="">
         <Col xs={12} md={8} className="">
           <ProfileMain />
         </Col>
-        <Col xs={12} md={3} className="">
+        <Col xs={12} md={4} className="">
           <ProfileSideBar />
           </Col>
       </Row>
-    </Container>
+    </div>
     <FooterLinkedin />
     </>
   );
