@@ -10,6 +10,7 @@ import { getDataAction, getExpAction, getPostAction } from "./redux/action";
 import ModifyExperience from "./components/Experience/ModifyExperience";
 import Homepage from "./components/Homepage/Homepage";
 import { Spinner } from "react-bootstrap";
+import Jobs from "./components/Jobs/Jobs";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,7 @@ function App() {
     };
     fetchData();
   }, [dispatch]);
-  
+
   useEffect(() => {
     if (profilo && profilo._id) {
       const fetchExpAndPost = async () => {
@@ -47,6 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={!isLoading && <Homepage />} />
         <Route path="/profile" element={!isLoading && <Profile />} />
+        <Route path="/lavoro" element={<Jobs />} />
         <Route
           path="/experience/modify"
           element={!isLoading && <ModifyExperience />}
