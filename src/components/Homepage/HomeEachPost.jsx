@@ -46,7 +46,7 @@ const HomeEachPost = function (props) {
                 <Dropdown.Item
                   onClick={() => {
                     dispatch(handleDeleteAction(props.element._id));
-                    props.setRender(!props.render)
+                    
                   }}
                 >
                   <Trash /> Elimina

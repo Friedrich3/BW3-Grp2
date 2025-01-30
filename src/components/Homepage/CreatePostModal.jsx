@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
-import { token } from "../../redux/action";
+import { getPostAction, token } from "../../redux/action";
+import { useDispatch } from "react-redux";
 
 const CreatePostModal = function (props) {
   const handleClose = () => props.setCreatePost(false);
   const [isDisabled, setIsDisabled] = useState(true);
   const[postText,setPostText] = useState()
+  const dispatch = useDispatch()
 
 
   const changeHandler = function (e){
@@ -31,6 +33,7 @@ const CreatePostModal = function (props) {
             })
             if(response.ok){
                 handleClose()
+                dispatch(getPostAction())
             }else{
                 throw new Error('ERRORE')
             }
