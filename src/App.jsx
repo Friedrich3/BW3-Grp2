@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { getDataAction } from "./redux/action";
 import ModifyExperience from "./components/Experience/ModifyExperience";
 import Homepage from "./components/Homepage/Homepage";
+import MessaggioLinkedin from "./components/MessaggioLinkedin";
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-
+      <MessaggioLinkedin />
       <FooterLinkedin />
     </BrowserRouter>
   );
