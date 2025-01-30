@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Button, Dropdown, Form, NavLink } from "react-bootstrap";
 import { GearWide, PencilSquare, Search, Wechat } from "react-bootstrap-icons";
-import { BiUserCircle } from "react-icons/bi";
+import { useSelector } from "react-redux";
+
 // import Image from "react-bootstrap";
 
 const MessaggioLinkedin = function () {
+    const profilo = useSelector((state) => {
+        return state.profile.data;
+      });
     const [isOpen, setIsOpen] = useState(false);
 
     const Tendina = () => {
@@ -19,7 +23,8 @@ const MessaggioLinkedin = function () {
         <>
             <div className="btnContenitoreTendina bg-white">
                 <Button onClick={Tendina} className="text-black fw-bold pt-2 btnTendina">
-                    < BiUserCircle style={{ fontSize: '35px' }} className="me-4 text-primary" />
+                <img src={profilo.image} alt="" className="me-3 rounded-circle" style={{width:'30px'}} />
+                    {/* < BiUserCircle style={{ fontSize: '35px' }} className="me-4 text-primary" /> */}
                     {isOpen ? 'Messaggistica ❌' : 'Messaggistica'} <Wechat className="mx-4" /><PencilSquare className="m-2" />
                 </Button>
 
@@ -54,7 +59,7 @@ const MessaggioLinkedin = function () {
                             </div>
                         </Form.Group>
                         <div className="text-center contenutoForm">
-                            <img src="https://static.licdn.com/aero-v1/sc/h/eeol4w9o9de2j4gq699mzx79d" alt="..." className="mt-5" />
+                            <img src={"https://static.licdn.com/aero-v1/sc/h/eeol4w9o9de2j4gq699mzx79d"} alt="..." className="mt-5" />
                             <p className="text-secondary fw-bold fs-4 lh-1 ">Ancora nessun <br />messaggio</p>
                             <p >Entra in contatto e dai il via a una conversazione per far decollare la tua carriera</p>
                             <Button className="text-dark fw-bold border-dark btnForm">Invia un messaggio</Button>
