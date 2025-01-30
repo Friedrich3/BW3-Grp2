@@ -6,6 +6,7 @@ export const DELETE_EXP_SUCCESS = 'DELETE_EXP_SUCCESS'
 export const GET_POST_SUCCESS = 'GET_POST_SUCCESS'
 export const GET_POST_ERROR = 'GET_POST_ERROR'
 export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS'
+export const UPDATE_POST='UPDATE_POST'
 
 
 
@@ -140,3 +141,29 @@ export const handleDeleteAction = (postId) => {
         }
     }
 }
+
+//DAFIXARE IN CASO PER
+// export const handleUpdateAction = (postId, newText, post ) => {
+//     return async (dispatch) => {
+//       try {
+//         const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
+//           method: "PUT",
+//           headers: { "Content-Type": "application/json" ,"Authorization": token},
+//           body: JSON.stringify({...post,
+//             text: newText }),
+//         });
+//   if (response.ok) {
+//       const updatedPost = await response.json();
+//       console.log(updatedPost)
+    
+//       dispatch({ type: UPDATE_POST, payload: updatedPost });
+//   }else{
+
+//       throw new Error("Errore nell'aggiornamento");
+//   }
+        
+//       } catch (error) {
+//         console.error("Errore:", error);
+//       }
+//     };
+//   };

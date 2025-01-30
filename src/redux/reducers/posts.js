@@ -1,4 +1,4 @@
-import { DELETE_POST_SUCCESS, GET_POST_ERROR, GET_POST_SUCCESS } from "../action"
+import { DELETE_POST_SUCCESS, GET_POST_ERROR, GET_POST_SUCCESS,} from "../action"
 
 const initialState ={
     data:[],
@@ -26,6 +26,13 @@ const postReducer = (state = initialState, action) =>{
                 ...state,
                 data: state.data.filter((e)=> {return e._id !== action.payload})
             }
+            // case UPDATE_POST:
+            // return {
+            //     ...state,
+            //     data: state.data.map(post => 
+            //         post._id === action.payload._id ? action.payload : post
+            //     )
+            // };
 
         default:
             return state
