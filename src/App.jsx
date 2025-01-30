@@ -27,12 +27,12 @@ function App() {
     };
     fetchData();
   }, [dispatch]);
-
+  
   useEffect(() => {
     if (profilo && profilo._id) {
       const fetchExpAndPost = async () => {
-        await dispatch(getPostAction()),
-        await dispatch(getExpAction(profilo._id)),
+        await dispatch(getPostAction());
+        await dispatch(getExpAction(profilo._id));
         setIsLoading(false);
       };
       fetchExpAndPost();
