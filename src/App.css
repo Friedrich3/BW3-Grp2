@@ -11,8 +11,8 @@ body {
 .custom-border {
   border-style: dashed !important;
 }
-.custom-hover-card:hover{
-  background-color:#f4f2ee
+.custom-hover-card:hover {
+  background-color: #f4f2ee;
 }
 .custom-position {
   position: absolute;
@@ -25,7 +25,6 @@ body {
   text-decoration: underline !important;
   color: rgba(0, 0, 255, 0.468);
 }
-
 
 /* FOOTERMINI */
 #example-custom-modal-styling-title {
@@ -119,14 +118,51 @@ hr {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-
 /* RANDOM CSS */
-.pointer{
+.pointer {
   cursor: pointer;
+}
+
+
+/* btnTendina*/
+.btnContenitoreTendina {
+  position: fixed;
+  bottom: 0;
+  right: 1em;
+  z-index: 1;
+}
+.btnTendina {
+  background-color: #ffffff;
+  border: none;
+  border-color: transparent;
+  box-shadow: -1px 0px 5px 0px rgb(186, 186, 186);
+}
+.btnTendina:hover {
+  background-color: #c0c6f7a3;
+}
+.bgForm {
+  background-color: #edf3f7;
+}
+.contenutoForm {
+  max-width: 280px;
+}
+.btnForm {
+  background-color: transparent;
+  margin-bottom: 100px;
+}
+.btnForm:hover {
+  background-color: rgb(197, 193, 193);
+  border: solid 3px;
+}
+@media screen and (max-width: 768px) {
+  .btnContenitoreTendina {
+    display: none;
+  }
 }
 
 .homepage-button:hover{
   background-color: #dddddcc0;
   
 }
+
 
