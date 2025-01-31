@@ -105,7 +105,7 @@ const HomeEachPost = function (props) {
             </div>
           </>
         ) : (
-          <Card.Text>
+          <div className=" card-text">
             <div>{props.element.text}</div>
             {props.element.image &&
              <div className="border">
@@ -113,7 +113,7 @@ const HomeEachPost = function (props) {
             </div> 
             }
             
-          </Card.Text>
+          </div>
         )}
         <hr color="secondary" />
         <div className="d-flex justify-content-around">
