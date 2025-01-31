@@ -12,6 +12,7 @@ import Homepage from "./components/Homepage/Homepage";
 import { Spinner } from "react-bootstrap";
 import Jobs from "./components/Jobs/Jobs";
 import MessaggioLinkedin from "./components/MessaggioLinkedin";
+import LoandingLinkeding from "./components/LoadingLinkedin";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +46,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavbarLinkedin />
-      {isLoading && <Spinner variant="success" />}
+      {isLoading && <LoandingLinkeding />}
       <Routes>
         <Route path="/" element={!isLoading && <Homepage />} />
         <Route path="/profile" element={!isLoading && <Profile />} />

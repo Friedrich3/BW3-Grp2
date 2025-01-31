@@ -12,7 +12,7 @@ const FooterMini = function () {
         <Container>
           <Row className="text-center">
 
-            <Col >
+            <Col>
 
               <Nav className="justify-content-center ">
                 <Link to="/" className="footerMini p-1 ">
