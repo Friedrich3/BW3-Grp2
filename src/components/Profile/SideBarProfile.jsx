@@ -44,7 +44,7 @@ const SideBarProfile = () => {
     <>
       {" "}
       {profiles && (
-        <Card>
+        <Card className="mt-3">
           <Card.Body>
             <h5>Persone che potresti conoscere</h5>
             {profiles.length > 0 &&
