@@ -21,7 +21,7 @@ function Homepage() {
         <Col lg={6} className="p-0">
           <HomeMain />
         </Col>
-        <Col lg={3}>
+        <Col lg={3} className="p-0">
           <HomeNews />
         </Col>
       </Row>
