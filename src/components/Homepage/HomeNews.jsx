@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import FooterMini from "../FooterMini";
 const HomeNews = () => {
   return (
-    <Container className="px-0">
+    <Container className="px-0 ms-lg-1 px-lg-2">
       <Card style={{ marginBottom: "20px" }}>
         <Card.Body>
           <Card.Title className="d-flex justify-content-between align-items-center">

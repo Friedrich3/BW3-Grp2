@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import {
   Accordion,
-  AccordionBody,
   Card,
   Col,
   Container,
@@ -137,19 +136,19 @@ function HomeProfile() {
             </Accordion.Body>
             <Accordion.Body className="border border-1 rounded-4 container mb-2 bg-white">
               <div className="p-3 row justify-content-between row-cols-md-4 row-cols-lg-1">
-                <div className=" text-start btn custom-hover-card custom-hover">
+                <div className=" text-center btn custom-hover-card custom-hover">
                   <Icons.BookmarkFill className="me-2" />
                   <span>Elementi</span>
                 </div>
-                <div className=" text-start btn custom-hover-card custom-hover">
+                <div className=" text-center btn custom-hover-card custom-hover">
                   <Icons.PeopleFill className="me-2" />
                   <span>Gruppi</span>
                 </div>
-                <div className=" text-start btn custom-hover-card custom-hover">
+                <div className=" text-center btn custom-hover-card custom-hover">
                   <Icons.Newspaper className="me-2" />
                   <span>NewsLetter</span>
                 </div>
-                <div className=" text-start btn custom-hover-card custom-hover">
+                <div className=" text-center btn custom-hover-card custom-hover">
                   <Icons.CalendarEvent className="me-2" />
                   <span>Eventi</span>
                 </div>
