@@ -1,28 +1,61 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Button, Card, Col, Modal, Row } from "react-bootstrap";
+import { Button, Card, Col, Form, Modal, Row } from "react-bootstrap";
 import {
-  Camera,
+  FileEarmarkPlus,
   PencilSquare,
   ShieldCheck,
-  Trash,
+  
 } from "react-bootstrap-icons";
 import EditProfileModal from "./EditProfileModal";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getDataAction, token } from "../../redux/action";
 
 const ProfileHero = function (props) {
   // HANDLE MODALE ICONA PROFILO
   const [profilePictureEdit, setProfilePictureEdit] = useState(false);
   const handleClose = (e) => e(false);
   const handleShow = (e) => e(true);
+  const dispatch = useDispatch()
 
   //Modale Modifica profilo
   const[editProfile,setEditProfile] = useState(false)
+
+  //modifica Foto Profilo
+  const[profileImage, setProfileImage] = useState(props.profilo.image)
 
   //Redux STore delle esperienze
   const lastExp = useSelector((store) => {
     return store.experiences.data[store.experiences.data.length -1];
   });
+
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    changeProfilePicture()
+    setEditProfile(false)
+
+  }
+
+  const changeProfilePicture = async () =>{
+    const form = new FormData()
+    const urlPicture = `https://striveschool-api.herokuapp.com/api/profile/${props.profilo._id}/picture`
+    form.set("profile", profileImage)
+    try {
+      const response = await fetch(urlPicture,{
+        method:'POST',
+        headers:{
+          Authorization: token
+        },
+        body : form
+      })
+      if(response.ok){
+        dispatch(getDataAction())
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -70,16 +103,31 @@ const ProfileHero = function (props) {
                           />
                         </Modal.Body>
                         <Modal.Footer className=" bg-dark border-secondary justify-content-between">
-                          <Button variant="dark">
+                          {/* <Button variant="dark">
                             <Camera />
                             <br />
                             Modifica
+                          </Button> */}
+                          <Form className="d-flex w-100 justify-content-between" onSubmit={handleSubmit}>
+                          <Form.Group>
+                            <input
+                id="fileImput"
+                type="file"
+                name="profile"
+                accept="image/*"
+                className="form-control mb-3"
+                onChange={(e) => {
+                  //formExp.set('experience',e.target.files[0])
+                  setProfileImage(e.target.files[0]);
+                }}
+              />
+                          </Form.Group>
+                          <Button variant="dark" type="submit" className="">
+                            <FileEarmarkPlus />
+                            Salva
+                           
                           </Button>
-                          <Button variant="dark">
-                            <Trash></Trash>
-                            <br />
-                            Elimina
-                          </Button>
+                          </Form>
                         </Modal.Footer>
                       </Modal>
                     </div>
