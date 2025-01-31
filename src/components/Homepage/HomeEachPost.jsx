@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button, Card, Dropdown, DropdownButton, Form } from "react-bootstrap";
-import { Gear, HandThumbsUp, HandThumbsUpFill, PencilFill, Trash } from "react-bootstrap-icons";
+import { ChatText, Gear, HandThumbsUp, HandThumbsUpFill, PencilFill, SendArrowDown, Trash } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostAction, handleDeleteAction, token } from "../../redux/action";
+import { BiShuffle } from "react-icons/bi";
 
 const HomeEachPost = function (props) {
   const profilo = useSelector((state) => state.profile.data);
@@ -18,23 +19,25 @@ const HomeEachPost = function (props) {
   //   setIsEditing(false);
   // };
 
-  const handleSave = async ()=>{
+  const handleSave = async () => {
     try {
-            const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${props.element._id}`, {
-              method: "PUT",
-              headers: { "Content-Type": "application/json" ,"Authorization": token},
-              body: JSON.stringify({...props.element,
-                                      text: editedText }),
-            });
-            if (response.ok){
-              setIsEditing(false)
-                dispatch(getPostAction())
-            }else{
-             throw new Error("Errore nell'aggiornamento");
-             } 
-          } catch (error) {
-            console.error("Errore:", error);
-          }
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${props.element._id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json", "Authorization": token },
+        body: JSON.stringify({
+          ...props.element,
+          text: editedText
+        }),
+      });
+      if (response.ok) {
+        setIsEditing(false)
+        dispatch(getPostAction())
+      } else {
+        throw new Error("Errore nell'aggiornamento");
+      }
+    } catch (error) {
+      console.error("Errore:", error);
+    }
   }
 
   return (
@@ -91,13 +94,13 @@ const HomeEachPost = function (props) {
         )}
         <hr color="secondary" />
         <div className="d-flex justify-content-around">
-          <Button variant="transparent" className="text-black border-0 homepage-button" onClick={() => setIsLiked(!isLiked)}>
+          <Button variant="transparent" className="text-black border-0 homepage-button fw-medium" onClick={() => setIsLiked(!isLiked)}>
             {isLiked ? <HandThumbsUpFill /> : <HandThumbsUp />}
             Mi piace
           </Button>
-          <Button variant="transparent" className="text-black border-0 homepage-button">Commenta</Button>
-          <Button variant="transparent" className="text-black border-0 homepage-button">Condividi</Button>
-          <Button variant="transparent" className="text-black border-0 homepage-button">Inoltra</Button>
+          <Button variant="transparent" className="text-black border-0 homepage-button fw-medium "> <ChatText /> Commenta</Button>
+          <Button variant="transparent" className="text-black border-0 homepage-button fw-medium"> <BiShuffle /> Condividi</Button>
+          <Button variant="transparent" className="text-black border-0 homepage-button fw-medium"> <SendArrowDown /> Inoltra</Button>
         </div>
       </Card.Body>
     </Card>
