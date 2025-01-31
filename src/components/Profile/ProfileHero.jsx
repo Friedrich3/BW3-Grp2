@@ -126,7 +126,7 @@ const ProfileHero = function (props) {
                                 }}
                               />
                             </Form.Group>
-                            <Button variant={isDisabled?'dark':'success'} type="submit" className="" >
+                            <Button variant={isDisabled?'dark':'success'} type="submit" className="" disabled={isDisabled}>
                               <FileEarmarkPlus />
                               Salva
                             </Button>
@@ -141,7 +141,6 @@ const ProfileHero = function (props) {
                 <Button
                   variant="outline-secondary"
                   className="border-0 rounded-circle py-2 align-text-top"
-                  disabled={isDisabled}
                   onClick={() => {
                     setEditProfile(true);
                   }}
