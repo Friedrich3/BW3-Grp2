@@ -23,7 +23,7 @@ const MessaggioLinkedin = function () {
         <>
             <div className="btnContenitoreTendina bg-white">
                 <Button onClick={Tendina} className="text-black fw-bold pt-2 btnTendina">
-                <img src={profilo.image} alt="" className="me-3 rounded-circle" style={{width:'30px'}} />
+                <img src={profilo.image} alt="" className="me-3 rounded-circle" style={{width:'30px',height:'30px'}} />
                     {/* < BiUserCircle style={{ fontSize: '35px' }} className="me-4 text-primary" /> */}
                     {isOpen ? 'Messaggistica ❌' : 'Messaggistica'} <Wechat className="mx-4" /><PencilSquare className="m-2" />
                 </Button>
