@@ -5,17 +5,12 @@ import HomeMain from "./HomeMain";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-
 function Homepage() {
-
   const postList = useSelector((store) => {
     return store.post.data;
   });
 
-  useEffect(()=>{
-    
-  },[postList])
-
+  useEffect(() => {}, [postList]);
 
   return (
     <Container className="pt-4">
@@ -26,7 +21,7 @@ function Homepage() {
         <Col lg={6} className="p-0">
           <HomeMain />
         </Col>
-        <Col lg={3}>
+        <Col lg={3} className="p-0">
           <HomeNews />
         </Col>
       </Row>

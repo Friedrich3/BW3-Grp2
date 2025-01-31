@@ -71,7 +71,8 @@ function NavbarLinkedin() {
                   <Form onSubmit={handleSubmit}>
                     <Form.Control
                       type="text"
-                      className="form-control "
+                      className="form-control pe-5"
+                      id="search"
                       placeholder="Cerca"
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
@@ -189,13 +190,15 @@ function NavbarLinkedin() {
                             //style={{ top: "15px" }}
                             width={30}
                             height={30}
-                            /><br className="d-none d-lg-inline" /><span className="d-none d-lg-inline">Tu</span>
+                          />
+                          <br className="d-none d-lg-inline" />
+                          <span className="d-none d-lg-inline">Tu</span>
                         </>
                       }
                       id="basic-nav-dropdown"
                       align="end"
                       className="m-0 mb-1 position-relative"
-                      >
+                    >
                       <NavDropdown.Item onClick={() => navigate("/profile")}>
                         <div className="d-flex gap-2">
                           <Col>
@@ -279,7 +282,10 @@ function NavbarLinkedin() {
                       className="mt-1 mx-1 text-center"
                       style={{ fontSize: "12px", color: "gray" }}
                     >
-                      <span className="d-none d-lg-inline">Per le aziende<IoMdArrowDropdown className="fs-5" /></span> 
+                      <span className="d-none d-lg-inline">
+                        Per le aziende
+                        <IoMdArrowDropdown className="fs-5" />
+                      </span>
                     </span>
                   </div>
 
