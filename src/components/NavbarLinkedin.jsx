@@ -30,6 +30,7 @@ function NavbarLinkedin() {
   const handleSubmit = function (e) {
     e.preventDefault();
     navigate(`/lavoro/${search}`);
+    setSearch('')
   };
 
   return (
