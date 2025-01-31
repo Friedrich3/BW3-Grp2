@@ -1,21 +1,39 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import { Button, Card, Dropdown, DropdownButton, Form } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Dropdown,
+  DropdownButton,
+  Form,
+  Row,
+} from "react-bootstrap";
 import {
   Gear,
   HandThumbsUp,
   HandThumbsUpFill,
   PencilFill,
+  ThreeDots,
   Trash,
 } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { getPostAction, handleDeleteAction, token } from "../../redux/action";
+import { getAllCommentsAction, getPostAction, handleDeleteAction, postCommentAction, token } from "../../redux/action";
 
 const HomeEachPost = function (props) {
+  const allComments = useSelector((state) => {
+    return state.comments.data;
+  });
+
   const profilo = useSelector((state) => state.profile.data);
   const [isLiked, setIsLiked] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(props.element.text);
+
+  const [isComment, setIsComment] = useState(false);
+  const [postComments, setPostComments] = useState([]);
+  const [commento,setCommento] = useState('')
   const dispatch = useDispatch();
 
   //DAFIXARE IN CASO
@@ -23,6 +41,16 @@ const HomeEachPost = function (props) {
   //   dispatch(handleUpdateAction(props.element._id, editedText, props.element)); // Azione Redux per aggiornare il post
   //   setIsEditing(false);
   // };
+  
+
+  useEffect(() => {
+    setPostComments(
+      allComments.filter((comment) => {
+        return comment.elementId === props.element._id;
+      })
+    );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allComments]);
 
   const handleSave = async () => {
     try {
@@ -44,6 +72,13 @@ const HomeEachPost = function (props) {
       console.error("Errore:", error);
     }
   };
+
+  const handleCommentSubmit =  (e) =>{
+    e.preventDefault()
+    dispatch(postCommentAction(commento ,props.element._id))
+    setCommento('')
+    dispatch(getAllCommentsAction())
+  }
 
   return (
     <Card className="mb-1">
@@ -107,12 +142,16 @@ const HomeEachPost = function (props) {
         ) : (
           <div className=" card-text">
             <div>{props.element.text}</div>
-            {props.element.image &&
-             <div className="border">
-              <img src={props.element.image} alt="" className="img-fluid" style={{minWidth:'100%' ,maxHeight:'500px'}}/>
-            </div> 
-            }
-            
+            {props.element.image && (
+              <div className="border">
+                <img
+                  src={props.element.image}
+                  alt=""
+                  className="img-fluid"
+                  style={{ minWidth: "100%", maxHeight: "500px" }}
+                />
+              </div>
+            )}
           </div>
         )}
         <hr color="secondary" />
@@ -128,6 +167,9 @@ const HomeEachPost = function (props) {
           <Button
             variant="transparent"
             className="text-black border-0 homepage-button"
+            onClick={() => {
+              setIsComment(!isComment);
+            }}
           >
             Commenta
           </Button>
@@ -144,6 +186,67 @@ const HomeEachPost = function (props) {
             Inoltra
           </Button>
         </div>
+
+        <Container>
+          <Row className={isComment ? "my-1 mb-3 bg-light rounded-4 align-items-center" : " "}>
+            {isComment && (
+              <>
+                <Col xs={1}>
+                  <img
+                    src={profilo.image}
+                    alt=""
+                    style={{ width: "30px" }}
+                    className="rounded-circle"
+                  />
+                </Col>
+                <Col xs={11} className="p-0 ps-2">
+                <Form onSubmit={handleCommentSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Scrivi un commento..."
+                    className="rounded-4 py-2 w-100 h-100 homepage-button border border-black text-start fw-medium text-secondary"
+                    value={commento}
+                    onChange={(e)=>{
+                      setCommento(e.target.value)
+                    }}
+                    />
+                    </Form>
+                </Col>
+              </>
+            )}
+          </Row>
+
+          {isComment &&
+
+            postComments &&
+            postComments.map((element) => {
+              return (
+                <Row key={element._id} className=" bg-light rounded-4 mb-2">
+                  <Col xs={1}>
+                    <img
+                      src="https://placecats.com/30/30"
+                      alt=""
+                      style={{ width: "30px" }}
+                      className="rounded-circle"
+                    />
+                  </Col>
+                  <Col xs={10}>
+                    <h6 className="m-0">{element.author}</h6>
+                    <span>{element.comment}</span>
+                  </Col>
+                  <Col
+                    xs={1}
+                    className="d-flex justify-content-center align-items-top"
+                  >
+                    <Button variant="transparent">
+                      <ThreeDots />
+                    </Button>
+                  </Col>
+                </Row>
+              );
+            })
+            }
+        </Container>
       </Card.Body>
     </Card>
   );

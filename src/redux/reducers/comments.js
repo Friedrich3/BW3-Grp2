@@ -1,4 +1,4 @@
-import { GET_COMMENT_ERROR, GET_COMMENT_SUCCESS } from "../action"
+import { GET_COMMENT_ERROR, GET_COMMENT_SUCCESS, POST_COMMENT_SUCCESS } from "../action"
 
 
 
@@ -22,6 +22,11 @@ const commentsReducer = (state = initialState, action) =>{
             return{
                 ...state,
                 error:action.payload
+            }
+        case POST_COMMENT_SUCCESS:
+            return {
+                ...state,
+                data: state.data.push(action.payload)
             }
 
         default:

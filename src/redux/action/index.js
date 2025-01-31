@@ -9,10 +9,13 @@ export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS'
 export const UPDATE_POST='UPDATE_POST'
 export const GET_COMMENT_SUCCESS ='GET_COMMENT_SUCCESS'
 export const GET_COMMENT_ERROR = 'GET_COMMENT_ERROR'
+export const POST_COMMENT_SUCCESS = 'POST_COMMENT_SUCCESS'
 
 
 
 export const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk3NDU0YTE2ZjYzNTAwMTVmZWNiN2MiLCJpYXQiOjE3Mzc5NjY5MjIsImV4cCI6MTczOTE3NjUyMn0.APtaAFtP0PypOo5hfd4isz08vj_exXfml5SDPxQvOZ4'
+const tokenCommenti ='Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzljOGJmNTMwYzQ4ZDAwMTU5M2IyOWYiLCJpYXQiOjE3MzgzMTI2OTMsImV4cCI6MTczOTUyMjI5M30.r5rxBIVJBTjBfdkrkkdUy2kOyb73VjsYsjPvhm29AKg'
+        
 
 export const getDataAction = () => {
     return async (dispatch) => {
@@ -144,37 +147,10 @@ export const handleDeleteAction = (postId) => {
     }
 }
 
-//DAFIXARE IN CASO PER
-// export const handleUpdateAction = (postId, newText, post ) => {
-//     return async (dispatch) => {
-//       try {
-//         const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
-//           method: "PUT",
-//           headers: { "Content-Type": "application/json" ,"Authorization": token},
-//           body: JSON.stringify({...post,
-//             text: newText }),
-//         });
-//   if (response.ok) {
-//       const updatedPost = await response.json();
-//       console.log(updatedPost)
-    
-//       dispatch({ type: UPDATE_POST, payload: updatedPost });
-//   }else{
-
-//       throw new Error("Errore nell'aggiornamento");
-//   }
-        
-//       } catch (error) {
-//         console.error("Errore:", error);
-//       }
-//     };
-//   };
-
 
 export const getAllCommentsAction = () => {
     
     return async (dispatch) => {
-        const tokenCommenti ='Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzljOGJmNTMwYzQ4ZDAwMTU5M2IyOWYiLCJpYXQiOjE3MzgzMTI2OTMsImV4cCI6MTczOTUyMjI5M30.r5rxBIVJBTjBfdkrkkdUy2kOyb73VjsYsjPvhm29AKg'
         const endpoint = 'https://striveschool-api.herokuapp.com/api/comments/'
         try {
             const response = await fetch(endpoint, {
@@ -198,5 +174,32 @@ export const getAllCommentsAction = () => {
                 payload: error
             })
         }
+    }
+}
+
+export const postCommentAction = (commento ,elementID) => {
+    return async() =>{
+        const object = {
+            'comment': commento,
+            'rate':'1',
+            'elementId': elementID
+        }
+        const endpoint = 'https://striveschool-api.herokuapp.com/api/comments/'
+        try {
+            const response = await fetch(endpoint,{
+                method:"POST",
+                headers:{
+                    "Authorization": tokenCommenti,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(object)
+            })
+            if(!response.ok){
+                throw new Error('ERRORE POST Commento')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 }

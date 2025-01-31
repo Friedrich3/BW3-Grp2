@@ -29,6 +29,7 @@ const SideBarProfile = () => {
 
   useEffect(() => {
     getCardsProfile();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const shuffleArray = function (array) {
