@@ -42,7 +42,7 @@ function JobsSidebar() {
               <div className="position-relative">
                 <Card.Img
                   src={profilo.image}
-                  style={{ width: "60px", bottom: "-10px" }}
+                  style={{ width: "60px",height:'60px', bottom: "-10px" }}
                   className=" rounded-circle border border-3 border-white custom-position"
                   onClick={() => {
                     navigate("/profile");

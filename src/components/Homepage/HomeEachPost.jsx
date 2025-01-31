@@ -201,7 +201,7 @@ const HomeEachPost = function (props) {
                   <img
                     src={profilo.image}
                     alt=""
-                    style={{ width: "30px" }}
+                    style={{ width: "30px",height:'30px' }}
                     className="rounded-circle"
                   />
                 </Col>
