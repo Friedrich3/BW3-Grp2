@@ -29,11 +29,11 @@ function JobsSidebar() {
   }, [lastExp]);
 
   return (
-    <Container>
+    <Container className="p-0">
       <Card className="border border-1 rounded-4 mb-2 bg-white">
         <Card.Img
           className="border-bottom border-2"
-          style={{ height: "50px" }}
+          style={{ height: "75px" }}
           src="../assets/PlaceholderBackground.jpeg"
         ></Card.Img>
         <Card.Body className="container pb-3">
@@ -117,7 +117,7 @@ function JobsSidebar() {
           <span>Pubblica offerta gratuita</span>
         </div>
       </div>
-      <div className="d-none d-md-block">
+      <div className="d-none d-lg-block">
         <FooterMini />
       </div>
     </Container>

@@ -19,73 +19,73 @@ const FooterLinkedin = function () {
                 style={{ fontSize: "12px" }}
               >
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/informazioni" className="text-decoration-none text-secondary">
                     Informazioni
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/informativa-community" className="text-decoration-none text-secondary">
                     Informativa sulla community professionale
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/privacy" className="text-decoration-none text-secondary">
                     Privacy e condizioni
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/sales-solution" className="text-decoration-none text-secondary">
                     Sales Solutions
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/security" className="text-decoration-none text-secondary">
                     Centro sicurezza
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/accessibilita" className="text-decoration-none text-secondary">
                     Accessibilità
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/career" className="text-decoration-none text-secondary">
                     Carriera
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/advertisements" className="text-decoration-none text-secondary">
                     Opzioni per gli annunci pubblicitari
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/mobile" className="text-decoration-none text-secondary">
                     Mobile
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/talent-solution" className="text-decoration-none text-secondary">
                     Talent Solutions
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/marketing-solution" className="text-decoration-none text-secondary">
                     Soluzioni di marketing
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/advertising" className="text-decoration-none text-secondary">
                     Pubblicità
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
+                  <Link to="/settings/small-company" className="text-decoration-none text-secondary">
                     Piccole imprese
                   </Link>
                 </li>
                 <li className="col fw-bold custom-hover">
-                  <Link to="/" className="text-decoration-none text-secondary">
-                    Centro sicurezza
+                  <Link to="/settings/privacy-check" className="text-decoration-none text-secondary">
+                    Controlli Privacy
                   </Link>
                 </li>
               </ul>
@@ -102,7 +102,7 @@ const FooterLinkedin = function () {
                   <QuestionCircleFill className="text-dark fs-4" />
                   <div className="text-secondary">
                     <Link
-                      to="/"
+                      to="/settings/FAQ"
                       className="text-decoration-none text-secondary"
                     >
                       <p
@@ -123,7 +123,7 @@ const FooterLinkedin = function () {
                   <GearFill className="text-dark fs-4" />
                   <div className="text-secondary">
                     <Link
-                      to="/"
+                      to="/settings/account/privacy"
                       className="text-decoration-none text-secondary"
                     >
                       <p
@@ -144,7 +144,7 @@ const FooterLinkedin = function () {
                   <ShieldShaded className="text-dark fs-4" />
                   <div className="text-secondary">
                     <Link
-                      to="/"
+                      to="/settings/recomended-content"
                       className="text-decoration-none text-secondary"
                     >
                       <p

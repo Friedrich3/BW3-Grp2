@@ -6,7 +6,7 @@ import NavbarLinkedin from "./components/NavbarLinkedin";
 import NotFound from "./components/NotFound";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getDataAction, getExpAction, getPostAction } from "./redux/action";
+import { getAllCommentsAction, getDataAction, getExpAction, getPostAction } from "./redux/action";
 import ModifyExperience from "./components/Experience/ModifyExperience";
 import Homepage from "./components/Homepage/Homepage";
 import { Spinner } from "react-bootstrap";
@@ -36,11 +36,11 @@ function App() {
       const fetchExpAndPost = async () => {
         await dispatch(getPostAction());
         await dispatch(getExpAction(profilo._id));
+        await dispatch(getAllCommentsAction())
         setIsLoading(false);
       };
       fetchExpAndPost();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profilo, dispatch]);
 
   return (

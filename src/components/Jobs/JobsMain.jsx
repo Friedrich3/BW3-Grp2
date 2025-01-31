@@ -98,7 +98,7 @@ const JobsMain = function () {
 
   return (
     <>
-      <Container fluid>
+      <Container fluid className="mt-2 mt-lg-0">
         <Row>
           <Card>
             <div>
@@ -121,7 +121,7 @@ const JobsMain = function () {
                   return (
                     <Button
                       key={index}
-                      className="rounded-pill mb-1 me-1"
+                      className="rounded-pill mb-1 me-1 fw-medium"
                       variant="outline-primary"
                       onClick={() => {
                         handleFetch(category);
@@ -152,7 +152,7 @@ const JobsMain = function () {
           {search !== undefined && (
             <Card>
                  <div className="d-flex justify-content-between">
-              <h5>Risultati Ricerca</h5>
+              <h5 className="mt-2 ms-2">Risultati Ricerca</h5>
               <Button
                   variant="transparent"
                   className="border-0"
