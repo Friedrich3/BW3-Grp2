@@ -19,7 +19,7 @@ const HomeNewPost = function () {
             <Row>
                 <Col xs={2} className="text-center">
                     <img src={profilo.image} alt=""
-                    style={{ width: "50px" }}
+                    style={{ width: "50px",height:'50px' }}
                     className=" rounded-circle"/>
                 </Col>
                 <Col xs={10} >

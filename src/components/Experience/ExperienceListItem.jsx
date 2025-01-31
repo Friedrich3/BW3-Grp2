@@ -23,7 +23,7 @@ const ExperienceListItem = function ({ item, calcoloDate, modificable }) {
               src={item.image}
               alt=""
               className="rounded-circle"
-              style={{ width: "50px" }}
+              style={{ width: "50px",height:'50px' }}
             />
           </Col>
           <Col xs={8} lg={9} className="">

@@ -188,8 +188,7 @@ function NavbarLinkedin() {
                             alt="logo"
                             className="rounded-circle mt-0"
                             //style={{ top: "15px" }}
-                            width={30}
-                            height={30}
+                            style={{width:'30px',height:'30px'}}
                           />
                           <br className="d-none d-lg-inline" />
                           <span className="d-none d-lg-inline">Tu</span>
@@ -205,8 +204,7 @@ function NavbarLinkedin() {
                             <img
                               src={profilo.image}
                               alt="profile logo"
-                              width={40}
-                              height={40}
+                              style={{width:'40px',height:'40px'}}
                               className="rounded-circle"
                             />
                           </Col>
