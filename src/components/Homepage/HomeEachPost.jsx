@@ -163,32 +163,32 @@ const HomeEachPost = function (props) {
         <div className="d-flex justify-content-around">
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
             onClick={() => setIsLiked(!isLiked)}
           >
-            {isLiked ? <HandThumbsUpFill /> : <HandThumbsUp />}
+            {isLiked ? <HandThumbsUpFill color="#279ce9" className="mx-1"/> : <HandThumbsUp className="mx-1"/>}
             Mi piace
           </Button>
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
             onClick={() => {
               setIsComment(!isComment);
             }}
           >
-            <ChatText /> Commenta
+            <ChatText className="mx-1"/> Commenta
           </Button>
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
           >
-            <BiShuffle /> Condividi
+            <BiShuffle className="mx-1"/> Condividi
           </Button>
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
           >
-            <SendArrowDown /> Inoltra
+            <SendArrowDown className="mx-1"/> Inoltra
           </Button>
 
         </div>
