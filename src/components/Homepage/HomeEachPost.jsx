@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 import { useEffect, useState } from "react";
 import {
   Button,
@@ -71,6 +72,7 @@ const HomeEachPost = function (props) {
     } catch (error) {
       console.error("Errore:", error);
     }
+
   };
 
   const handleCommentSubmit =  (e) =>{
@@ -171,20 +173,21 @@ const HomeEachPost = function (props) {
               setIsComment(!isComment);
             }}
           >
-            Commenta
+            <ChatText /> Commenta
           </Button>
           <Button
             variant="transparent"
             className="text-black border-0 homepage-button"
           >
-            Condividi
+            <BiShuffle /> Condividi
           </Button>
           <Button
             variant="transparent"
             className="text-black border-0 homepage-button"
           >
-            Inoltra
+            <SendArrowDown /> Inoltra
           </Button>
+
         </div>
 
         <Container>
