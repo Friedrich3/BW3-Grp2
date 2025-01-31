@@ -12,15 +12,18 @@ import {
   Row,
 } from "react-bootstrap";
 import {
+  ChatText,
   Gear,
   HandThumbsUp,
   HandThumbsUpFill,
   PencilFill,
+  SendArrowDown,
   ThreeDots,
   Trash,
 } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCommentsAction, getPostAction, handleDeleteAction, postCommentAction, token } from "../../redux/action";
+import { BiShuffle } from "react-icons/bi";
 
 const HomeEachPost = function (props) {
   const allComments = useSelector((state) => {
