@@ -109,16 +109,16 @@ function HomeProfile() {
             </div>
           </Card.Body>
         </Card>
-        <Accordion className="d-lg-none">
+        <Accordion className="d-lg-none mb-2">
           <Accordion.Item>
             <Accordion.Header>Vedi altro</Accordion.Header>
-            <Accordion.Body className="border border-1 rounded-4 container mb-2 bg-white">
+            <Accordion.Body className="border border-1 rounded-0 container mb-2 bg-white">
               <p className="text-secondary">
                 Raggiungi i tuoi obiettivi di carriera
               </p>
               <p>Prova Premium per 0 EUR</p>
             </Accordion.Body>
-            <Accordion.Body className="border border-1 rounded-4 container mb-2 bg-white">
+            <Accordion.Body className="border border-1 rounded-0 container mb-2 bg-white">
               <div className="p-3">
                 <div className="d-flex align-items-center">
                   <span className="fw-medium">Collegamenti</span>
@@ -134,7 +134,7 @@ function HomeProfile() {
                 </span>
               </div>
             </Accordion.Body>
-            <Accordion.Body className="border border-1 rounded-4 container mb-2 bg-white">
+            <Accordion.Body className="border border-1 rounded-0 container mb-2 bg-white">
               <div className="p-3 row justify-content-between row-cols-md-4 row-cols-lg-1">
                 <div className=" text-center btn custom-hover-card custom-hover">
                   <Icons.BookmarkFill className="me-2" />
