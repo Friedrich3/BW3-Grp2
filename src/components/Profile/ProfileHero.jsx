@@ -72,7 +72,7 @@ const ProfileHero = function (props) {
                 <div className="position-relative">
                   <Card.Img
                     src={props.profilo.image}
-                    style={{ width: "150px" }}
+                    style={{ width: "150px", height:'150px' }}
                     className=" rounded-circle border border-3 border-white custom-position"
                     onClick={()=>{handleShow(setProfilePictureEdit)}}
                   />
@@ -97,7 +97,7 @@ const ProfileHero = function (props) {
                         <Modal.Body className=" bg-dark border-secondary d-flex justify-content-center">
                           <img
                             src={props.profilo.image}
-                            style={{ width: "150px" }}
+                            style={{ width: "150px", height:'150px' }}
                             className=" rounded-circle border border-3 border-white"
                             onClick={handleShow}
                           />
