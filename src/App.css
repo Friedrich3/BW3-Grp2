@@ -11,9 +11,11 @@ body {
 .custom-border {
   border-style: dashed !important;
 }
+
 .custom-hover-card:hover {
   background-color: #f4f2ee;
 }
+
 .custom-position {
   position: absolute;
   bottom: -30px;
@@ -35,10 +37,11 @@ body {
   --bs-modal-width: 100vw;
   margin: 0;
 }
+
 .footerMini {
   text-decoration: none !important;
-  color: black ;
-  font-size: 11px ;
+  color: black;
+  font-size: 11px;
 }
 
 .footerMini:hover {
@@ -66,6 +69,10 @@ hr {
   position: absolute;
 }
 
+#search {
+  background-color: #EDF3F8;
+}
+
 /*HomeNews*/
 .content {
   display: flex;
@@ -80,12 +87,15 @@ hr {
 .text-container p {
   margin: 0;
 }
+
 .text-decoration-none:visited {
   color: black;
 }
+
 .content:hover {
   background: #ebebeb;
 }
+
 .ArrowBarRight {
   font-size: 25px;
   margin-bottom: 15px;
@@ -104,6 +114,7 @@ hr {
   border: none;
   font-weight: 500;
 }
+
 .fs-img {
   font-size: 15px;
 }
@@ -131,38 +142,43 @@ hr {
   right: 1em;
   z-index: 1;
 }
+
 .btnTendina {
   background-color: #ffffff;
   border: none;
   border-color: transparent;
   box-shadow: -1px 0px 5px 0px rgb(186, 186, 186);
 }
+
 .btnTendina:hover {
   background-color: #c0c6f7a3;
 }
+
 .bgForm {
   background-color: #edf3f7;
 }
+
 .contenutoForm {
   max-width: 280px;
 }
+
 .btnForm {
   background-color: transparent;
   margin-bottom: 100px;
 }
+
 .btnForm:hover {
   background-color: rgb(197, 193, 193);
   border: solid 3px;
 }
+
 @media screen and (max-width: 768px) {
   .btnContenitoreTendina {
     display: none;
   }
 }
 
-.homepage-button:hover{
+.homepage-button:hover {
   background-color: #dddddcc0;
-  
+
 }
-
-

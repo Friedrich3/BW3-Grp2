@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 import { useEffect, useState } from "react";
 import {
   Button,
@@ -11,15 +12,18 @@ import {
   Row,
 } from "react-bootstrap";
 import {
+  ChatText,
   Gear,
   HandThumbsUp,
   HandThumbsUpFill,
   PencilFill,
+  SendArrowDown,
   ThreeDots,
   Trash,
 } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCommentsAction, getPostAction, handleDeleteAction, postCommentAction, token } from "../../redux/action";
+import { BiShuffle } from "react-icons/bi";
 
 const HomeEachPost = function (props) {
   const allComments = useSelector((state) => {
@@ -71,6 +75,7 @@ const HomeEachPost = function (props) {
     } catch (error) {
       console.error("Errore:", error);
     }
+
   };
 
   const handleCommentSubmit =  (e) =>{
@@ -158,33 +163,34 @@ const HomeEachPost = function (props) {
         <div className="d-flex justify-content-around">
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
             onClick={() => setIsLiked(!isLiked)}
           >
-            {isLiked ? <HandThumbsUpFill /> : <HandThumbsUp />}
+            {isLiked ? <HandThumbsUpFill color="#279ce9" className="mx-1"/> : <HandThumbsUp className="mx-1"/>}
             Mi piace
           </Button>
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
             onClick={() => {
               setIsComment(!isComment);
             }}
           >
-            Commenta
+            <ChatText className="mx-1"/> Commenta
           </Button>
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
           >
-            Condividi
+            <BiShuffle className="mx-1"/> Condividi
           </Button>
           <Button
             variant="transparent"
-            className="text-black border-0 homepage-button"
+            className="text-black border-0 homepage-button d-flex align-items-center "
           >
-            Inoltra
+            <SendArrowDown className="mx-1"/> Inoltra
           </Button>
+
         </div>
 
         <Container>

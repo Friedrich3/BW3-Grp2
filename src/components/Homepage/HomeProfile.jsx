@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import {
+  Accordion,
+  Card,
+  Col,
+  Container,
+  Row,
+} from "react-bootstrap";
 import * as Icons from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -103,48 +109,96 @@ function HomeProfile() {
             </div>
           </Card.Body>
         </Card>
-        <div className="d-flex d-md-block">
+        <Accordion className="d-lg-none mb-2">
+          <Accordion.Item>
+            <Accordion.Header>Vedi altro</Accordion.Header>
+            <Accordion.Body className="border border-1 rounded-0 container mb-2 bg-white">
+              <p className="text-secondary">
+                Raggiungi i tuoi obiettivi di carriera
+              </p>
+              <p>Prova Premium per 0 EUR</p>
+            </Accordion.Body>
+            <Accordion.Body className="border border-1 rounded-0 container mb-2 bg-white">
+              <div className="p-3">
+                <div className="d-flex align-items-center">
+                  <span className="fw-medium">Collegamenti</span>
 
-        <div className="border border-1 rounded-4 container mb-2 bg-white">
-          <p className="text-secondary">
-            Raggiungi i tuoi obiettivi di carriera
-          </p>
-          <p>Prova Premium per 0 EUR</p>
-        </div>
-        <div className="border border-1 rounded-4 container mb-2 bg-white">
-          <div className="p-3">
-            <div className="d-flex align-items-center" > 
-          <span className="fw-medium">Collegamenti</span>
+                  <Icons.PersonPlusFill className="ms-auto " />
+                  <br />
+                </div>
+                <span
+                  className="text-secondary fw-medium"
+                  style={{ fontSize: "0.8em" }}
+                >
+                  Espandi la tua rete
+                </span>
+              </div>
+            </Accordion.Body>
+            <Accordion.Body className="border border-1 rounded-0 container mb-2 bg-white">
+              <div className="p-3 row justify-content-between row-cols-md-4 row-cols-lg-1">
+                <div className=" text-center btn custom-hover-card custom-hover">
+                  <Icons.BookmarkFill className="me-2" />
+                  <span>Elementi</span>
+                </div>
+                <div className=" text-center btn custom-hover-card custom-hover">
+                  <Icons.PeopleFill className="me-2" />
+                  <span>Gruppi</span>
+                </div>
+                <div className=" text-center btn custom-hover-card custom-hover">
+                  <Icons.Newspaper className="me-2" />
+                  <span>NewsLetter</span>
+                </div>
+                <div className=" text-center btn custom-hover-card custom-hover">
+                  <Icons.CalendarEvent className="me-2" />
+                  <span>Eventi</span>
+                </div>
+              </div>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+        <div className="d-none d-lg-block">
+          <div className="border border-1 rounded-4 container mb-2 bg-white">
+            <p className="text-secondary">
+              Raggiungi i tuoi obiettivi di carriera
+            </p>
+            <p>Prova Premium per 0 EUR</p>
+          </div>
+          <div className="border border-1 rounded-4 container mb-2 bg-white">
+            <div className="p-3">
+              <div className="d-flex align-items-center">
+                <span className="fw-medium">Collegamenti</span>
 
-          <Icons.PersonPlusFill className="ms-auto "/><br/>
-
+                <Icons.PersonPlusFill className="ms-auto " />
+                <br />
+              </div>
+              <span
+                className="text-secondary fw-medium"
+                style={{ fontSize: "0.8em" }}
+              >
+                Espandi la tua rete
+              </span>
             </div>
-          <span className="text-secondary fw-medium" style={{fontSize: '0.8em'}}>Espandi la tua rete</span>
-
           </div>
-        </div>
-        <div className="border border-1 rounded-4 container mb-2 bg-white">
-          <div className="p-3 row justify-content-between row-cols-md-4 row-cols-lg-1">
-
-          <div className=" text-md-center btn custom-hover-card custom-hover">
-            <Icons.BookmarkFill/>
-            <span>Elementi</span>
+          <div className="border border-1 rounded-4 container mb-2 bg-white">
+            <div className="p-3 row justify-content-between row-cols-md-4 row-cols-lg-1">
+              <div className=" text-start btn custom-hover-card custom-hover">
+                <Icons.BookmarkFill className="me-2" />
+                <span>Elementi</span>
+              </div>
+              <div className=" text-start btn custom-hover-card custom-hover">
+                <Icons.PeopleFill className="me-2" />
+                <span>Gruppi</span>
+              </div>
+              <div className=" text-start btn custom-hover-card custom-hover">
+                <Icons.Newspaper className="me-2" />
+                <span>NewsLetter</span>
+              </div>
+              <div className=" text-start btn custom-hover-card custom-hover">
+                <Icons.CalendarEvent className="me-2" />
+                <span>Eventi</span>
+              </div>
+            </div>
           </div>
-          <div className=" text-md-center btn custom-hover-card custom-hover">
-            <Icons.PeopleFill />
-            <span>Gruppi</span>
-          </div>
-          <div className=" text-md-center btn custom-hover-card custom-hover">
-            <Icons.Newspaper />
-            <span>NewsLetter</span>
-          </div>
-          <div className=" text-md-center btn custom-hover-card custom-hover">
-            <Icons.CalendarEvent />
-            <span>Eventi</span>
-          </div>
-        </div>
-          </div>
-
         </div>
       </div>
     </Container>
