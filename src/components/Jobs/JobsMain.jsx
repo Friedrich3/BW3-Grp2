@@ -34,9 +34,10 @@ const JobsMain = function () {
   const[searchList, setSearchList]= useState([])
   const [isSearchLoading, setIsSearchLoading] = useState(true);
 
+  
   useEffect(() => {
-    handleFetch();
     setSearch(params.search);
+    handleFetch();
     if(params!== undefined){
         awaitFunction()
     }
@@ -45,7 +46,7 @@ const JobsMain = function () {
 
   const awaitFunction = async()=>{
         await fetchSearch()
-        console.log(searchList)
+        //console.log(searchList)
         setIsSearchLoading(false)
   }
 
